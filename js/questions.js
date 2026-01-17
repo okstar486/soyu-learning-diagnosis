@@ -170,19 +170,36 @@ const Questions = {
   /**
    * 스케일 문제 답변 처리
    * @param {number} value - 선택한 값 (0-4)
-   * @returns {Object} { value, feedback }
+   * @returns {Object} { value, feedback, score }
    */
   handleScaleAnswer(value) {
     const question = this.getCurrent();
     if (!question) return null;
 
-    // 스케일 문제는 정답/오답이 없음
+    // 역채점 여부 확인 (positive: false면 역채점)
+    const isPositive = question.scoring?.positive !== false;
+
+    // 점수 계산 (weights 사용 또는 기본값)
+    const weights = question.scoring?.weights || [1, 2, 3, 4, 5];
+    const score = weights[value] || (value + 1);
+
+    // 피드백 카테고리 결정
     let feedbackCategory = 'mid';
-    if (value <= 1) feedbackCategory = 'low';
-    else if (value >= 3) feedbackCategory = 'high';
+
+    if (isPositive) {
+      // 긍정 문항: 높은 값 = high
+      if (value <= 1) feedbackCategory = 'low';
+      else if (value >= 3) feedbackCategory = 'high';
+    } else {
+      // 역채점 문항: 높은 값 = low (예: "포기하고 싶어지나요?")
+      if (value <= 1) feedbackCategory = 'high';
+      else if (value >= 3) feedbackCategory = 'low';
+    }
 
     return {
       value,
+      score,
+      isPositive,
       feedback: question.feedback?.[feedbackCategory] || '응답해줘서 고마워!'
     };
   },
