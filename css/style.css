@@ -122,9 +122,10 @@ body {
 }
 
 .header-left, .header-right {
-  width: 80px;
+  min-width: 80px;
   display: flex;
   align-items: center;
+  gap: var(--spacing-xs);
 }
 
 .header-right {
@@ -327,6 +328,7 @@ body {
   bottom: var(--spacing-lg);
   right: var(--spacing-lg);
   z-index: var(--z-base);
+  pointer-events: none; /* 캐릭터는 클릭 불가 */
 }
 
 .character-container.hidden {
@@ -335,6 +337,9 @@ body {
 
 .character-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .character-image {
@@ -342,14 +347,22 @@ body {
   height: var(--character-size);
   object-fit: contain;
   filter: drop-shadow(0 4px 10px var(--shadow-color));
+  transition: filter var(--transition-base);
+  will-change: transform, filter; /* 애니메이션 성능 최적화 */
+}
+
+/* 캐릭터 호버 효과 */
+.character-image:hover {
+  filter: drop-shadow(0 6px 15px var(--shadow-color));
 }
 
 .character-dialogue {
   position: absolute;
   bottom: 100%;
   right: 0;
-  margin-bottom: var(--spacing-sm);
-  max-width: 250px;
+  margin-bottom: var(--spacing-md);
+  max-width: 280px;
+  z-index: 1;
 }
 
 .character-dialogue.hidden {
@@ -360,24 +373,42 @@ body {
   background: var(--bg-card);
   border: 2px solid var(--primary);
   border-radius: var(--radius-xl);
-  padding: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
   position: relative;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg,
+    rgba(22, 33, 62, 0.95) 0%,
+    rgba(26, 26, 46, 0.98) 100%);
+}
+
+.dialogue-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  right: 32px;
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: var(--primary) transparent transparent;
+  filter: drop-shadow(0 2px 4px var(--shadow-color));
 }
 
 .dialogue-bubble::after {
   content: '';
   position: absolute;
-  bottom: -10px;
-  right: 30px;
+  bottom: -8px;
+  right: 34px;
   border-width: 10px 10px 0;
   border-style: solid;
-  border-color: var(--primary) transparent transparent;
+  border-color: var(--bg-card) transparent transparent;
 }
 
 .dialogue-text {
   font-size: var(--font-size-sm);
   color: var(--text-primary);
   line-height: var(--line-height-relaxed);
+  word-break: keep-all;
+  min-height: 1.5em; /* 타이핑 시 높이 변화 방지 */
 }
 
 /* ========================================

@@ -164,6 +164,11 @@ const Diagnosis = {
   completeArea() {
     const areaTime = Math.round((Date.now() - this.areaStartTime) / 1000);
 
+    // 영역 완료 효과음
+    if (window.Sound) {
+      Sound.play('complete');
+    }
+
     // 결과 저장
     Storage.saveResult(this.currentArea, {
       ...this.currentResults,

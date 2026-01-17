@@ -47,11 +47,15 @@ const App = {
 
     // 모듈 초기화
     UI.init();
+    Sound.init();
     Character.init();
     Level.init();
 
     // 레벨 배지 업데이트
     Level.updateBadge();
+
+    // 음소거 버튼 이벤트
+    this.initMuteButton();
 
     // URL 파라미터 확인
     const params = new URLSearchParams(window.location.search);
@@ -139,6 +143,20 @@ const App = {
   },
 
   /**
+   * 음소거 버튼 초기화
+   */
+  initMuteButton() {
+    const muteBtn = document.getElementById('btn-mute');
+    if (muteBtn) {
+      muteBtn.onclick = () => {
+        Sound.toggleMute();
+        Sound.play('click');
+      };
+      Sound.updateMuteButton();
+    }
+  },
+
+  /**
    * 홈 페이지 초기화
    */
   initHomePage() {
@@ -151,6 +169,7 @@ const App = {
 
     if (startBtn) {
       startBtn.onclick = () => {
+        Sound.play('click');
         if (hasProgress) {
           UI.confirm('진행 중인 진단이 있습니다. 새로 시작할까요?', {
             title: '확인',
@@ -172,6 +191,7 @@ const App = {
       if (hasProgress) {
         continueBtn.classList.remove('hidden');
         continueBtn.onclick = () => {
+          Sound.play('click');
           Diagnosis.start();
         };
       } else {
@@ -181,6 +201,7 @@ const App = {
 
     if (dashboardBtn) {
       dashboardBtn.onclick = () => {
+        Sound.play('click');
         this.navigate('dashboard');
       };
     }
@@ -224,7 +245,10 @@ const App = {
       `;
 
       if (!isCompleted) {
-        card.onclick = () => this.startArea(area.id);
+        card.onclick = () => {
+          Sound.play('click');
+          this.startArea(area.id);
+        };
       }
 
       areaList.appendChild(card);
@@ -389,10 +413,12 @@ const App = {
     const nextContainer = document.getElementById('next-container');
 
     if (type !== 'scale' && btn) {
-      // 정답/오답 표시
+      // 정답/오답 효과음
       if (result.correct) {
+        Sound.play('correct');
         btn.classList.add('correct');
       } else {
+        Sound.play('incorrect');
         btn.classList.add('incorrect');
         // 정답 표시
         const options = document.querySelectorAll('.option-btn');
@@ -400,6 +426,9 @@ const App = {
           options[result.correctAnswer].classList.add('correct');
         }
       }
+    } else if (type === 'scale') {
+      // 스케일 문제는 클릭 효과음만
+      Sound.play('click');
     }
 
     // 피드백 메시지
@@ -417,6 +446,7 @@ const App = {
     if (nextContainer) {
       nextContainer.classList.remove('hidden');
       document.getElementById('btn-next').onclick = () => {
+        Sound.play('click');
         const next = Diagnosis.nextQuestion();
         if (next) {
           this.showQuestion();
@@ -492,8 +522,12 @@ const App = {
     this.addResultStyles();
 
     // 이벤트
-    document.getElementById('btn-home').onclick = () => this.navigate('home');
+    document.getElementById('btn-home').onclick = () => {
+      Sound.play('click');
+      this.navigate('home');
+    };
     document.getElementById('btn-restart').onclick = () => {
+      Sound.play('click');
       Diagnosis.reset();
       this.navigate('home');
     };

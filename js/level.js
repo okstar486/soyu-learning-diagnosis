@@ -205,6 +205,11 @@ const Level = {
 
     if (!container) return;
 
+    // 레벨업 효과음
+    if (window.Sound) {
+      Sound.play('levelup');
+    }
+
     // 내용 설정
     title.textContent = '레벨 업!';
     name.textContent = levelData.name;
@@ -223,6 +228,9 @@ const Level = {
 
     // 닫기 버튼
     closeBtn.onclick = () => {
+      if (window.Sound) {
+        Sound.play('click');
+      }
       container.classList.add('hidden');
       particles.innerHTML = '';
     };

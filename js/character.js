@@ -8,8 +8,13 @@ const Character = {
   state: {
     emotion: 'default',
     isVisible: false,
-    isSpeaking: false
+    isSpeaking: false,
+    isAnimating: false,
+    currentAnimation: null
   },
+
+  // 애니메이션 큐
+  animationQueue: [],
 
   // 대사 데이터 (Fallback - 설정 파일에서 오버라이드 가능)
   dialogues: {
@@ -106,11 +111,20 @@ const Character = {
 
   /**
    * 캐릭터 표시
+   * @param {boolean} withAnimation - 등장 애니메이션 여부
    */
-  show() {
+  show(withAnimation = true) {
     if (this.container) {
       this.container.classList.remove('hidden');
       this.state.isVisible = true;
+
+      if (withAnimation && this.imageElement) {
+        this.playAnimation('character-enter');
+        // 등장 후 기본 float 애니메이션
+        setTimeout(() => {
+          this.playAnimation('character-float');
+        }, 800);
+      }
     }
   },
 
@@ -127,29 +141,114 @@ const Character = {
   /**
    * 감정 설정 및 이미지 변경
    * @param {string} emotion - 감정 상태
+   * @param {boolean} withParticles - 파티클 효과 여부
    */
-  setEmotion(emotion) {
+  setEmotion(emotion, withParticles = false) {
     this.state.emotion = emotion;
 
     if (this.imageElement) {
       const imagePath = this.images[emotion] || this.images.default;
       this.imageElement.src = imagePath;
 
-      // 감정별 애니메이션 클래스
-      this.imageElement.classList.remove('character-happy', 'character-encourage', 'character-bounce');
+      // 모든 애니메이션 클래스 제거
+      this.clearAnimations();
 
+      // 감정별 애니메이션 적용
       switch (emotion) {
         case 'happy':
-          this.imageElement.classList.add('character-happy');
+          this.playAnimation('character-happy');
+          if (withParticles) {
+            this.createSparkParticles();
+          }
           break;
         case 'encourage':
-          this.imageElement.classList.add('character-encourage');
+          this.playAnimation('character-encourage');
+          if (withParticles) {
+            this.createHeartParticles();
+          }
+          break;
+        case 'focus':
+          this.playAnimation('character-focus');
           break;
         case 'levelup':
-          this.imageElement.classList.add('character-bounce');
+          this.playAnimation('character-levelup');
+          if (withParticles) {
+            this.createFoxfireParticles();
+          }
           break;
+        case 'complete':
+          this.playAnimation('character-complete');
+          if (withParticles) {
+            this.createPetalParticles();
+          }
+          break;
+        default:
+          this.playAnimation('character-float');
       }
     }
+  },
+
+  /**
+   * 애니메이션 재생
+   * @param {string} animationClass - 애니메이션 클래스명
+   */
+  playAnimation(animationClass) {
+    if (!this.imageElement) return;
+
+    this.state.isAnimating = true;
+    this.state.currentAnimation = animationClass;
+    this.imageElement.classList.add(animationClass);
+
+    // 애니메이션 종료 후 클래스 제거 (infinite 애니메이션 제외)
+    if (!['character-float', 'character-focus', 'character-bounce'].includes(animationClass)) {
+      const duration = this.getAnimationDuration(animationClass);
+      setTimeout(() => {
+        this.imageElement.classList.remove(animationClass);
+        this.state.isAnimating = false;
+        this.state.currentAnimation = null;
+      }, duration);
+    }
+  },
+
+  /**
+   * 애니메이션 지속 시간 가져오기
+   * @param {string} animationClass - 애니메이션 클래스명
+   * @returns {number} 밀리초
+   */
+  getAnimationDuration(animationClass) {
+    const durations = {
+      'character-happy': 600,
+      'character-encourage': 1000,
+      'character-levelup': 1000,
+      'character-complete': 1200,
+      'character-enter': 800
+    };
+    return durations[animationClass] || 500;
+  },
+
+  /**
+   * 모든 애니메이션 클래스 제거
+   */
+  clearAnimations() {
+    if (!this.imageElement) return;
+
+    const animationClasses = [
+      'character-happy',
+      'character-encourage',
+      'character-focus',
+      'character-levelup',
+      'character-complete',
+      'character-bounce',
+      'character-float',
+      'character-enter'
+    ];
+
+    animationClasses.forEach(cls => {
+      this.imageElement.classList.remove(cls);
+    });
+
+    this.state.isAnimating = false;
+    this.state.currentAnimation = null;
   },
 
   /**
@@ -168,6 +267,104 @@ const Character = {
   },
 
   /**
+   * 파티클 생성 (범용)
+   * @param {string} type - 파티클 타입
+   * @param {number} count - 생성 개수
+   */
+  createParticles(type, count = 10) {
+    if (!this.container) return;
+
+    const rect = this.imageElement.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => {
+        const particle = document.createElement('div');
+        particle.className = `particle particle-${type}`;
+
+        // 랜덤 위치 및 이동 방향 설정
+        const angle = (Math.random() * 360) * Math.PI / 180;
+        const distance = 50 + Math.random() * 100;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+        const rotate = Math.random() * 360;
+
+        particle.style.left = `${centerX}px`;
+        particle.style.top = `${centerY}px`;
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+        particle.style.setProperty('--rotate', `${rotate}deg`);
+
+        // 파티클 타입별 색상
+        if (type === 'confetti') {
+          const colors = ['#9370DB', '#FFD700', '#E6E6FA', '#4ade80'];
+          particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        } else if (type === 'heart') {
+          particle.textContent = '💜';
+        }
+
+        document.body.appendChild(particle);
+
+        // 애니메이션 종료 후 제거
+        const duration = type === 'petal' ? 3000 : type === 'foxfire' ? 2000 : 800;
+        setTimeout(() => {
+          particle.remove();
+        }, duration);
+      }, i * 50);
+    }
+  },
+
+  /**
+   * 여우불 파티클 (레벨업)
+   */
+  createFoxfireParticles() {
+    this.createParticles('foxfire', 15);
+  },
+
+  /**
+   * 꽃잎 파티클 (완료)
+   */
+  createPetalParticles() {
+    this.createParticles('petal', 20);
+  },
+
+  /**
+   * 스파크 파티클 (정답)
+   */
+  createSparkParticles() {
+    this.createParticles('spark', 8);
+  },
+
+  /**
+   * 하트 파티클 (격려)
+   */
+  createHeartParticles() {
+    this.createParticles('heart', 5);
+  },
+
+  /**
+   * 말풍선 타이핑 효과 강화
+   * @param {string} text - 대사 텍스트
+   * @returns {Promise}
+   */
+  async typeText(text) {
+    if (!this.dialogueText) return;
+
+    this.dialogueText.textContent = '';
+
+    for (let i = 0; i < text.length; i++) {
+      this.dialogueText.textContent += text[i];
+
+      // 타이핑 속도: 한글은 느리게, 공백/기호는 빠르게
+      const char = text[i];
+      const delay = /[\s.,!?~]/.test(char) ? 10 : /[가-힣]/.test(char) ? 40 : 30;
+
+      await this.sleep(delay);
+    }
+  },
+
+  /**
    * 대사 말하기 (타이핑 효과)
    * @param {string} text - 대사 텍스트
    * @param {number} duration - 표시 시간 (ms)
@@ -179,12 +376,8 @@ const Character = {
     this.dialogueContainer.classList.remove('hidden');
     this.dialogueContainer.classList.add('dialogue-appear');
 
-    // 타이핑 효과
-    this.dialogueText.textContent = '';
-    for (let i = 0; i < text.length; i++) {
-      this.dialogueText.textContent += text[i];
-      await this.sleep(30);
-    }
+    // 향상된 타이핑 효과
+    await this.typeText(text);
 
     // 일정 시간 후 숨기기
     await this.sleep(duration);
@@ -227,7 +420,7 @@ const Character = {
    * 정답 반응
    */
   sayCorrect() {
-    this.setEmotion('happy');
+    this.setEmotion('happy', true); // 파티클 효과 활성화
     const text = this.getRandomDialogue('correct');
     this.speak(text, 2500);
   },
@@ -236,7 +429,7 @@ const Character = {
    * 오답 반응 (격려)
    */
   sayIncorrect() {
-    this.setEmotion('encourage');
+    this.setEmotion('encourage', true); // 파티클 효과 활성화
     const text = this.getRandomDialogue('incorrect');
     this.speak(text, 3000);
   },
@@ -246,7 +439,7 @@ const Character = {
    * @param {number} level - 레벨
    */
   sayLevelUp(level) {
-    this.setEmotion('levelup');
+    this.setEmotion('levelup', true); // 파티클 효과 활성화
     const text = this.dialogues.levelUp[level] || `레벨 ${level} 달성! 대단해!`;
     this.speak(text, 5000);
   },
@@ -275,7 +468,7 @@ const Character = {
    * 종료 대사
    */
   sayEnd() {
-    this.setEmotion('complete');
+    this.setEmotion('complete', true); // 파티클 효과 활성화
     const text = this.getRandomDialogue('end');
     this.speak(text, 4000);
   },
@@ -296,6 +489,64 @@ const Character = {
    */
   sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+  },
+
+  /**
+   * 눈 깜빡임 효과 활성화
+   */
+  enableBlink() {
+    if (this.imageElement) {
+      this.imageElement.classList.add('character-blink');
+    }
+  },
+
+  /**
+   * 눈 깜빡임 효과 비활성화
+   */
+  disableBlink() {
+    if (this.imageElement) {
+      this.imageElement.classList.remove('character-blink');
+    }
+  },
+
+  /**
+   * 귀 흔들림 효과 (일시적)
+   * @param {number} duration - 지속 시간 (ms)
+   */
+  wiggleEars(duration = 2000) {
+    if (this.imageElement) {
+      this.imageElement.classList.add('character-ear-wiggle');
+      setTimeout(() => {
+        this.imageElement.classList.remove('character-ear-wiggle');
+      }, duration);
+    }
+  },
+
+  /**
+   * 순차적 애니메이션 체인
+   * @param {Array} animations - 애니메이션 배열 [{emotion, text, duration, particles}]
+   */
+  async playAnimationChain(animations) {
+    for (const anim of animations) {
+      if (anim.emotion) {
+        this.setEmotion(anim.emotion, anim.particles || false);
+      }
+      if (anim.text) {
+        await this.speak(anim.text, anim.duration || 3000);
+      }
+      if (anim.wait) {
+        await this.sleep(anim.wait);
+      }
+    }
+  },
+
+  /**
+   * 감정 리셋
+   */
+  resetEmotion() {
+    this.clearAnimations();
+    this.setEmotion('default');
+    this.playAnimation('character-float');
   }
 };
 
