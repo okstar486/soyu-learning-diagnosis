@@ -146,6 +146,15 @@
 /* ========================================
    파티클 효과 (Particles)
    ======================================== */
+
+/* 기본 파티클 */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 컨페티 파티클 */
 @keyframes confettiFall {
   0% {
     transform: translateY(-100%) rotate(0deg);
@@ -157,26 +166,22 @@
   }
 }
 
-@keyframes starBurst {
-  0% {
-    transform: translate(0, 0) scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--tx, 100px), var(--ty, -100px)) scale(1);
-    opacity: 0;
-  }
-}
-
-.particle {
-  position: absolute;
-  pointer-events: none;
-}
-
 .particle-confetti {
   width: 10px;
   height: 10px;
   animation: confettiFall 2s ease-out forwards;
+}
+
+/* 별 파티클 */
+@keyframes starBurst {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 100px), var(--ty, -100px)) scale(1) rotate(180deg);
+    opacity: 0;
+  }
 }
 
 .particle-star {
@@ -185,57 +190,377 @@
   animation: starBurst 0.8s ease-out forwards;
 }
 
+/* 여우불 파티클 (레벨업용) */
+@keyframes foxfireRise {
+  0% {
+    transform: translate(0, 0) scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 0px), var(--ty, -150px)) scale(1) rotate(var(--rotate, 360deg));
+    opacity: 0;
+  }
+}
+
+@keyframes foxfireGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+}
+
+.particle-foxfire {
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, #FFD700 0%, #9370DB 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #FFD700, 0 0 20px #9370DB;
+  animation: foxfireRise 2s ease-out forwards, foxfireGlow 0.5s ease-in-out infinite;
+}
+
+/* 꽃잎 파티클 (완료용) */
+@keyframes petalFall {
+  0% {
+    transform: translate(0, -20px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 50px), 100vh) rotate(var(--rotate, 720deg));
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.particle-petal {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #E6E6FA 0%, #9370DB 100%);
+  border-radius: 50% 0 50% 0;
+  animation: petalFall 3s ease-out forwards;
+  opacity: 0.8;
+}
+
+/* 스파크 파티클 (정답용) */
+@keyframes sparkFade {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(var(--tx, 30px), var(--ty, -30px)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 60px), var(--ty, -60px)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.particle-spark {
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #4ade80 0%, transparent 70%);
+  border-radius: 50%;
+  animation: sparkFade 0.8s ease-out forwards;
+}
+
+/* 하트 파티클 (격려용) */
+@keyframes heartFloat {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 20px), var(--ty, -100px)) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.particle-heart {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  animation: heartFloat 1.5s ease-out forwards;
+}
+
 /* ========================================
    캐릭터 애니메이션
    ======================================== */
+
+/* 캐릭터 등장 애니메이션 */
+@keyframes characterSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 기쁨 애니메이션 - 점프 + 반짝 */
 @keyframes characterHappy {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
   }
   25% {
-    transform: translateY(-10px) rotate(-5deg);
-  }
-  75% {
-    transform: translateY(-10px) rotate(5deg);
-  }
-}
-
-@keyframes characterEncourage {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25%, 75% {
-    transform: translateX(5px);
+    transform: translateY(-20px) rotate(-8deg);
   }
   50% {
-    transform: translateX(-5px);
+    transform: translateY(-10px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(8deg);
   }
 }
 
+@keyframes characterSparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+/* 격려 애니메이션 - 고개 끄덕임 */
+@keyframes characterEncourage {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  15% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  30% {
+    transform: translateY(5px) rotate(-2deg);
+  }
+  45% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  60% {
+    transform: translateY(5px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(1deg);
+  }
+}
+
+/* 집중 애니메이션 - 테두리 발광 */
+@keyframes characterFocus {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(147, 112, 219, 0));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(147, 112, 219, 0.8))
+            drop-shadow(0 0 40px rgba(147, 112, 219, 0.4));
+    transform: scale(1.02);
+  }
+}
+
+@keyframes focusPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(147, 112, 219, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(147, 112, 219, 0);
+  }
+}
+
+/* 레벨업 애니메이션 - 회전 + 발광 */
+@keyframes characterLevelup {
+  0% {
+    transform: rotate(0deg) scale(1);
+    filter: brightness(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.1);
+    filter: brightness(1.3);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.15);
+    filter: brightness(1.5);
+  }
+  75% {
+    transform: rotate(-5deg) scale(1.1);
+    filter: brightness(1.3);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes levelupGlowRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 40px rgba(255, 215, 0, 0);
+    opacity: 0;
+  }
+}
+
+/* 완료 애니메이션 - 축하 이펙트 */
+@keyframes characterComplete {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  10% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  20% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  30% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+}
+
+/* 점프 애니메이션 */
 @keyframes characterBounce {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-20px);
   }
 }
 
+/* 부드러운 떠있기 */
 @keyframes characterFloat {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
   }
+}
+
+/* 여우 귀 흔들림 효과 */
+@keyframes earWiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: top center;
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+
+/* 눈 깜빡임 효과 */
+@keyframes eyeBlink {
+  0%, 90%, 100% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+
+/* 캐릭터 클래스 */
+.character-enter {
+  animation: characterSlideIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .character-happy {
   animation: characterHappy 0.6s ease;
+  position: relative;
+}
+
+.character-happy::after {
+  content: '✨';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 2rem;
+  animation: characterSparkle 0.6s ease;
+  pointer-events: none;
 }
 
 .character-encourage {
-  animation: characterEncourage 0.5s ease;
+  animation: characterEncourage 1s ease;
+}
+
+.character-focus {
+  animation: characterFocus 2s ease-in-out infinite;
+  position: relative;
+}
+
+.character-focus::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: focusPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+.character-levelup {
+  animation: characterLevelup 1s ease;
+  position: relative;
+}
+
+.character-levelup::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  animation: levelupGlowRing 1s ease-out;
+  pointer-events: none;
+}
+
+.character-complete {
+  animation: characterComplete 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .character-bounce {
@@ -246,13 +571,24 @@
   animation: characterFloat 3s ease-in-out infinite;
 }
 
+.character-ear-wiggle {
+  animation: earWiggle 0.5s ease infinite;
+}
+
+.character-blink {
+  animation: eyeBlink 4s ease-in-out infinite;
+}
+
 /* ========================================
    대화 버블 애니메이션
    ======================================== */
 @keyframes dialogueAppear {
   0% {
     opacity: 0;
-    transform: scale(0.8) translateY(10px);
+    transform: scale(0.3) translateY(20px);
+  }
+  60% {
+    transform: scale(1.05) translateY(-5px);
   }
   100% {
     opacity: 1;
@@ -260,23 +596,77 @@
   }
 }
 
+@keyframes dialogueBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
 @keyframes typingDots {
   0%, 20% {
     opacity: 0;
+    transform: translateY(0);
   }
   50% {
     opacity: 1;
+    transform: translateY(-3px);
   }
   100% {
     opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+/* 타이핑 커서 효과 */
+@keyframes typingCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 말풍선 흔들림 (강조용) */
+@keyframes dialogueShake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(2deg);
   }
 }
 
 .dialogue-appear {
-  animation: dialogueAppear 0.3s ease;
+  animation: dialogueAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dialogue-bounce {
+  animation: dialogueBounce 0.5s ease infinite;
+}
+
+.dialogue-shake {
+  animation: dialogueShake 0.3s ease;
+}
+
+.typing-indicator {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
 }
 
 .typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--primary, #9370DB);
+  border-radius: 50%;
   animation: typingDots 1.4s ease-in-out infinite;
 }
 
@@ -286,6 +676,15 @@
 
 .typing-indicator span:nth-child(3) {
   animation-delay: 0.4s;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: currentColor;
+  margin-left: 2px;
+  animation: typingCursor 0.8s ease-in-out infinite;
 }
 
 /* ========================================

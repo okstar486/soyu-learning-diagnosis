@@ -81,6 +81,18 @@ const Dashboard = {
 
     container.innerHTML = `
       <div class="dashboard-content">
+        <!-- 인쇄 전용 헤더 -->
+        <div class="print-only print-header">
+          <div class="print-logo">🦊 소유 학습 진단</div>
+          <div class="print-title">나비저택 특별 수련 결과</div>
+          <div class="print-date">진단일: ${new Date().toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+          })}</div>
+        </div>
+
         <!-- 요약 -->
         <section class="dashboard-section">
           <h2>📊 진단 요약</h2>
@@ -158,14 +170,41 @@ const Dashboard = {
           </div>
         </section>
 
+        <!-- 학습 추천 -->
+        <section class="dashboard-section">
+          <h2>🎯 개인화된 학습 추천</h2>
+          <div id="recommendations-container" class="recommendations-container">
+            ${this.generateRecommendations(summary, analysis)}
+          </div>
+        </section>
+
         <!-- 내보내기 -->
         <section class="dashboard-section">
           <h2>📤 데이터 관리</h2>
-          <div class="export-buttons">
-            <button id="btn-export" class="btn btn-secondary">JSON 내보내기</button>
-            <button id="btn-reset" class="btn btn-secondary" style="background: var(--error);">데이터 초기화</button>
+          <div class="export-section">
+            <h3 style="font-size: var(--font-size-md); color: var(--text-secondary); margin-bottom: var(--spacing-md);">인쇄 및 내보내기</h3>
+            <div class="export-buttons">
+              <button id="btn-print" class="btn btn-accent" style="background: var(--accent); color: #000;">🖨️ 인쇄하기</button>
+            </div>
+            <h3 style="font-size: var(--font-size-md); color: var(--text-secondary); margin: var(--spacing-lg) 0 var(--spacing-md) 0;">CSV 리포트 내보내기</h3>
+            <div class="export-buttons">
+              <button id="btn-export-csv-simple" class="btn btn-primary">CSV 간단 요약</button>
+              <button id="btn-export-csv-detailed" class="btn btn-primary">CSV 문항별 상세</button>
+            </div>
+            <h3 style="font-size: var(--font-size-md); color: var(--text-secondary); margin: var(--spacing-lg) 0 var(--spacing-md) 0;">기타</h3>
+            <div class="export-buttons">
+              <button id="btn-export" class="btn btn-secondary">JSON 내보내기</button>
+              <button id="btn-reset" class="btn btn-secondary" style="background: var(--error);">데이터 초기화</button>
+            </div>
           </div>
         </section>
+
+        <!-- 인쇄 전용 푸터 -->
+        <div class="print-only print-footer">
+          <div class="print-footer-character">🦊</div>
+          <div class="print-footer-message">"매일 조금씩, 꾸준히 연습하면 누구나 강해질 수 있어!" - 하루</div>
+          <div>소유 학습 진단 앱 | 나비저택 특별 수련</div>
+        </div>
       </div>
     `;
 
@@ -175,12 +214,30 @@ const Dashboard = {
     // 차트 생성
     this.createRadarChart(summary);
 
-    // 이벤트
+    // 이벤트 - 인쇄하기
+    document.getElementById('btn-print').onclick = () => {
+      this.printReport();
+    };
+
+    // 이벤트 - CSV 내보내기
+    document.getElementById('btn-export-csv-simple').onclick = () => {
+      this.exportCSV();
+      UI.showToast('CSV 요약 파일이 다운로드됩니다', 'success');
+    };
+
+    document.getElementById('btn-export-csv-detailed').onclick = async () => {
+      UI.showToast('CSV 상세 파일을 생성 중입니다...', 'info');
+      await this.exportDetailedCSV();
+      UI.showToast('CSV 상세 파일이 다운로드됩니다', 'success');
+    };
+
+    // 이벤트 - JSON 내보내기
     document.getElementById('btn-export').onclick = () => {
       Storage.downloadJSON();
       UI.showToast('JSON 파일이 다운로드됩니다', 'success');
     };
 
+    // 이벤트 - 데이터 초기화
     document.getElementById('btn-reset').onclick = async () => {
       const confirmed = await UI.confirm('모든 진단 데이터를 삭제할까요? 이 작업은 되돌릴 수 없습니다.', {
         title: '데이터 초기화',
@@ -315,6 +372,25 @@ const Dashboard = {
   },
 
   /**
+   * 학습 추천 생성
+   */
+  generateRecommendations(summary, analysis) {
+    // Recommendation 모듈이 로드되었는지 확인
+    if (typeof Recommendation === 'undefined') {
+      return '<p class="text-muted">추천 시스템을 불러올 수 없습니다.</p>';
+    }
+
+    // 추천 생성
+    const recommendations = Recommendation.generate(summary, analysis);
+
+    // 스타일 추가
+    Recommendation.addStyles();
+
+    // HTML 렌더링
+    return Recommendation.render(recommendations);
+  },
+
+  /**
    * 시간 포맷
    */
   formatTime(seconds) {
@@ -322,6 +398,118 @@ const Dashboard = {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}분 ${secs}초`;
+  },
+
+  /**
+   * CSV 내보내기 (간단 요약)
+   */
+  exportCSV() {
+    const summary = Diagnosis.getResultsSummary();
+    const level = Level.getCurrentLevel();
+    const timestamp = new Date().toISOString();
+
+    let csv = '\uFEFF'; // UTF-8 BOM for Korean support
+
+    // 헤더 정보
+    csv += `소유 학습 진단 결과\n`;
+    csv += `내보내기 날짜,${timestamp.split('T')[0]}\n`;
+    csv += `내보내기 시간,${timestamp.split('T')[1].split('.')[0]}\n`;
+    csv += `현재 레벨,${level.level}\n`;
+    csv += `평균 정답률,${Storage.getTotalAccuracy()}%\n`;
+    csv += `완료율,${Storage.getCompletionRate()}%\n`;
+    csv += `\n`;
+
+    // 영역별 요약
+    csv += `영역,정답수,전체문항,정답률,소요시간(초)\n`;
+
+    Object.entries(summary).forEach(([area, data]) => {
+      csv += `${data.name},${data.correct},${data.total},${data.accuracy}%,${data.time}\n`;
+    });
+
+    this.downloadCSV(csv, 'soyu_진단결과_요약');
+  },
+
+  /**
+   * CSV 내보내기 (문항별 상세)
+   */
+  async exportDetailedCSV() {
+    const results = Storage.loadResults();
+    const timestamp = new Date().toISOString();
+
+    let csv = '\uFEFF'; // UTF-8 BOM
+
+    // 헤더 정보
+    csv += `소유 학습 진단 결과 (상세)\n`;
+    csv += `내보내기 날짜,${timestamp.split('T')[0]}\n`;
+    csv += `내보내기 시간,${timestamp.split('T')[1].split('.')[0]}\n`;
+    csv += `\n`;
+
+    // 문항별 상세 헤더
+    csv += `영역,문제번호,난이도,정답여부,선택한답,정답,카테고리\n`;
+
+    // 각 영역별 문제 데이터
+    for (const [areaId, result] of Object.entries(results)) {
+      const areaInfo = Questions.getAreaInfo(areaId);
+      const areaName = areaInfo?.name || areaId;
+
+      // 문제 데이터 로드
+      await Questions.loadArea(areaId);
+      const questions = Questions.currentQuestions;
+
+      // 각 답변 처리
+      result.answers.forEach((userAnswer, index) => {
+        const question = questions[index];
+        if (!question) return;
+
+        const difficulty = question.difficulty || result.difficulties?.[index] || '-';
+        const isCorrect = question.type === 'scale' ? 'N/A' : (userAnswer === question.answer ? 'O' : 'X');
+        const correctAnswer = question.type === 'scale' ? 'N/A' : question.answer;
+        const category = question.category || '-';
+
+        csv += `${areaName},${question.id || index + 1},${difficulty},${isCorrect},${userAnswer},${correctAnswer},${category}\n`;
+      });
+    }
+
+    this.downloadCSV(csv, 'soyu_진단결과_상세');
+  },
+
+  /**
+   * CSV 파일 다운로드
+   * @param {string} csvData - CSV 데이터
+   * @param {string} fileNamePrefix - 파일명 접두사
+   */
+  downloadCSV(csvData, fileNamePrefix) {
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+
+    const dateStr = new Date().toISOString().split('T')[0].replace(/-/g, '');
+    const fileName = `${fileNamePrefix}_${dateStr}.csv`;
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  },
+
+  /**
+   * 인쇄하기
+   * 레이더 차트를 포함한 전체 결과를 인쇄합니다
+   */
+  printReport() {
+    // 인쇄 전 처리
+    const originalTitle = document.title;
+    document.title = `소유_학습진단결과_${new Date().toLocaleDateString('ko-KR').replace(/\./g, '-')}`;
+
+    // 차트가 렌더링될 시간을 주기 위해 약간의 지연
+    setTimeout(() => {
+      window.print();
+
+      // 인쇄 후 원래 제목으로 복원
+      document.title = originalTitle;
+    }, 100);
   },
 
   /**
@@ -367,7 +555,8 @@ const Dashboard = {
       .strategy-content { background: var(--bg-card); padding: var(--spacing-lg); border-radius: var(--radius-xl); }
       .strategy-item { margin-bottom: var(--spacing-md); line-height: 1.6; }
 
-      .export-buttons { display: flex; gap: var(--spacing-md); }
+      .export-section { background: var(--bg-card); padding: var(--spacing-lg); border-radius: var(--radius-xl); }
+      .export-buttons { display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
       .export-buttons .btn { flex: 1; }
 
       @media (max-width: 768px) {

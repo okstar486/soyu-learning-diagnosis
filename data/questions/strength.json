@@ -3,7 +3,7 @@
   "areaName": "강점 발견",
   "areaIcon": "⭐",
   "themeStory": "모든 귀살대원에게는 특별한 강점이 있어! 탄지로는 후각, 젠이츠는 청각, 이노스케는 촉각... 너만의 강점을 찾아보자!",
-  "totalQuestions": 15,
+  "totalQuestions": 25,
   "description": "학습 스타일과 개인적 강점을 발견합니다. 정답이 없으며, 자신을 더 잘 알기 위한 질문들이에요.",
   "strengthTypes": {
     "visual": { "name": "시각적 학습자", "icon": "👁️", "description": "그림과 색으로 배우면 효과적!" },
@@ -224,6 +224,146 @@
         "high": "도전을 즐기는구나! 어려운 문제에 도전하는 게 성장의 기회야!",
         "mid": "가끔 성취감을 느끼는구나!",
         "low": "괜찮아, 작은 성공에서도 기쁨을 찾을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_016",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "음악이나 노래로 외우면 더 잘 외워지나요?",
+      "context": "하루가 호흡법을 리듬에 맞춰 외우고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "auditory" },
+      "feedback": {
+        "high": "리듬이나 멜로디가 기억에 도움이 되는구나! 암기할 때 활용해봐!",
+        "mid": "가끔 노래로 외우는 게 효과적이구나!",
+        "low": "다른 방법이 더 맞을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_017",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "손으로 만들거나 조립하는 걸 좋아하나요?",
+      "context": "하루가 훈련 도구를 만들고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "kinesthetic" },
+      "feedback": {
+        "high": "손으로 하는 활동이 강점이네! 만들기나 실험을 활용해봐!",
+        "mid": "가끔 만들기가 재미있구나!",
+        "low": "보고 듣는 게 더 편할 수 있어!"
+      }
+    },
+    {
+      "id": "strength_018",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "책을 읽으면서 내용을 상상하는 걸 좋아하나요?",
+      "context": "하루가 이야기책을 읽으며 상상하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "creative" },
+      "feedback": {
+        "high": "상상력이 풍부하구나! 독서를 통해 창의력을 더 키울 수 있어!",
+        "mid": "가끔 상상하며 읽는구나!",
+        "low": "사실 그대로 이해하는 것도 좋아!"
+      }
+    },
+    {
+      "id": "strength_019",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "표나 그래프로 정리하면 더 이해가 잘 되나요?",
+      "context": "하루가 훈련 기록을 표로 만들고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "visual" },
+      "feedback": {
+        "high": "시각적 정리가 효과적이구나! 도표와 그래프를 활용해봐!",
+        "mid": "가끔 표로 정리하는 게 도움이 되는구나!",
+        "low": "글로 설명하는 게 더 맞을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_020",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "단계별로 차근차근 배우는 게 좋나요?",
+      "context": "하루가 기초부터 체계적으로 배우고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "logical" },
+      "feedback": {
+        "high": "체계적인 학습이 맞는구나! 단계별 학습법을 활용해봐!",
+        "mid": "가끔 단계적으로 배우는 게 좋구나!",
+        "low": "한번에 전체를 보는 것도 좋은 방법이야!"
+      }
+    },
+    {
+      "id": "strength_021",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "토론이나 대화로 배우는 게 재미있나요?",
+      "context": "하루가 동료들과 토론하며 배우고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "social" },
+      "feedback": {
+        "high": "대화를 통한 학습이 효과적이구나! 토론 활동을 많이 해봐!",
+        "mid": "가끔 대화하며 배우는 게 좋구나!",
+        "low": "혼자 생각하는 게 더 편할 수 있어!"
+      }
+    },
+    {
+      "id": "strength_022",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "일기나 감상문 쓰는 걸 좋아하나요?",
+      "context": "하루가 훈련 일지를 쓰고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "reading" },
+      "feedback": {
+        "high": "글쓰기가 강점이네! 생각을 글로 표현하는 연습을 계속해봐!",
+        "mid": "가끔 쓰는 것도 괜찮구나!",
+        "low": "말이나 다른 방법으로 표현하는 게 더 편할 수 있어!"
+      }
+    },
+    {
+      "id": "strength_023",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "자유롭게 생각하고 표현하는 걸 좋아하나요?",
+      "context": "하루가 자신만의 방법을 찾고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "creative" },
+      "feedback": {
+        "high": "자유로운 표현이 강점이네! 창의적 활동을 많이 해봐!",
+        "mid": "가끔 자유롭게 표현하는 게 좋구나!",
+        "low": "정해진 틀을 따르는 것도 좋은 방법이야!"
+      }
+    },
+    {
+      "id": "strength_024",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "혼자 계획 세우고 실행하는 게 편하나요?",
+      "context": "하루가 스스로 훈련 계획을 짜고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "independent" },
+      "feedback": {
+        "high": "자기주도적 학습이 강점이네! 스스로 계획하고 실행해봐!",
+        "mid": "가끔 혼자 계획하는 게 괜찮구나!",
+        "low": "다른 사람과 함께 계획하는 것도 좋아!"
+      }
+    },
+    {
+      "id": "strength_025",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "퀴즈나 게임으로 배우면 더 재미있나요?",
+      "context": "하루가 게임처럼 훈련하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "kinesthetic" },
+      "feedback": {
+        "high": "활동적인 학습이 효과적이구나! 게임이나 체험 활동을 활용해봐!",
+        "mid": "가끔 게임으로 배우는 게 재미있구나!",
+        "low": "조용히 집중하는 게 더 맞을 수 있어!"
       }
     }
   ],

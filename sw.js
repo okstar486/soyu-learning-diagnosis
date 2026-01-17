@@ -3,7 +3,7 @@
  * 오프라인 지원 및 캐싱
  */
 
-const CACHE_NAME = 'soyu-diagnosis-v4';
+const CACHE_NAME = 'soyu-diagnosis-v6';
 const CACHE_URLS = [
   '/',
   '/index.html',
@@ -17,6 +17,7 @@ const CACHE_URLS = [
   // JavaScript
   '/js/app.js',
   '/js/storage.js',
+  '/js/sound.js',
   '/js/ui.js',
   '/js/character.js',
   '/js/diagnosis.js',

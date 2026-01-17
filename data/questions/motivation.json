@@ -3,7 +3,7 @@
   "areaName": "학습 동기/정서",
   "areaIcon": "❤️",
   "themeStory": "공부할 때 어떤 마음이 드는지 하루에게 이야기해줘! 좋은 마음, 힘든 마음 모두 괜찮아. 솔직하게 표현하는 게 중요해!",
-  "totalQuestions": 18,
+  "totalQuestions": 28,
   "description": "학습에 대한 감정, 흥미, 태도를 진단합니다. 정답이 없으며, 솔직한 마음이 가장 중요해요.",
   "categories": {
     "interest": "학습 흥미 - 배움에 대한 즐거움",
@@ -84,7 +84,7 @@
       "feedback": {
         "high": "그 뿌듯함을 기억해! 계속 느낄 수 있을 거야!",
         "mid": "조금이라도 뿌듯함을 느끼면 성공이야!",
-        "low": "작은 성취도 축하해줘야 해. 하루가 응원할게!"
+        "low": "작은 성취도 축하해줘야 해. 하루가 응원할게."
       }
     },
     {
@@ -281,6 +281,156 @@
         "mid": "관심 있는 책부터 시작해보자!",
         "low": "책이 어렵게 느껴지면 짧은 글부터 시작해봐!"
       }
+    },
+    {
+      "id": "motivation_019",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "새로운 도전을 시작하면 기대되나요?",
+      "context": "하루가 새로운 임무를 받았을 때의 설렘이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "새로운 도전에 설레는구나! 긍정적인 마음이야!",
+        "mid": "조금씩 기대하는 마음을 키워보자!",
+        "low": "두려움보다 기대에 집중해봐! 새로운 경험은 성장의 기회야!"
+      }
+    },
+    {
+      "id": "motivation_020",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "공부 시간을 정해두고 지키는 편인가요?",
+      "context": "하루가 매일 정해진 시간에 수련하듯...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "시간 관리를 잘하는구나! 규칙적인 습관이 훌륭해!",
+        "mid": "가끔 정해진 시간에 하려고 노력해봐!",
+        "low": "작은 시간부터 정해보자! 10분이라도 매일 같은 시간에!"
+      }
+    },
+    {
+      "id": "motivation_021",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "emotion",
+      "question": "친구들과 함께 공부하면 즐거운가요?",
+      "context": "동료들과 함께 훈련하는 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "함께 공부하는 게 즐겁구나! 협동 학습이 잘 맞아!",
+        "mid": "혼자도, 함께도 나름 괜찮지!",
+        "low": "혼자 집중하는 게 더 맞을 수도 있어. 자신에게 맞는 방식으로!"
+      }
+    },
+    {
+      "id": "motivation_022",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "anxiety",
+      "question": "공부할 게 많으면 막막한가요?",
+      "context": "수많은 훈련 과제를 받았을 때의 마음이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "많은 것도 차분히 처리하는구나! 대단해!",
+        "mid": "조금 막막해도 괜찮아. 하나씩 나눠서 하면 돼!",
+        "low": "많이 막막하구나. 작게 나눠서 하나씩 해치우자! 하루처럼!"
+      }
+    },
+    {
+      "id": "motivation_023",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "배운 것을 실제로 사용해보고 싶나요?",
+      "context": "하루가 배운 기술을 실전에서 써보고 싶어하듯...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "배운 걸 활용하고 싶어하는구나! 실용적인 마음이야!",
+        "mid": "가끔 써보고 싶을 때가 있지!",
+        "low": "배운 걸 써보면 더 잘 기억해! 실생활과 연결해봐!"
+      }
+    },
+    {
+      "id": "motivation_024",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "공부하기 전에 준비물을 미리 챙기나요?",
+      "context": "훈련 전 검과 장비를 점검하는 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "준비를 철저히 하는구나! 체계적인 습관이야!",
+        "mid": "가끔 준비하는 것도 좋지!",
+        "low": "미리 준비하면 시간을 아낄 수 있어! 시작 전 5분만 투자해봐!"
+      }
+    },
+    {
+      "id": "motivation_025",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "emotion",
+      "question": "공부하다가 잘 풀리면 기분이 좋아지나요?",
+      "context": "어려운 기술이 성공했을 때의 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "성취감을 잘 느끼는구나! 그 기분이 동기가 돼!",
+        "mid": "조금이라도 기분 좋으면 좋은 신호야!",
+        "low": "작은 성공도 기뻐하는 연습을 해봐! 그게 동력이 돼!"
+      }
+    },
+    {
+      "id": "motivation_026",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "anxiety",
+      "question": "시험 전날 잠을 잘 못 자나요?",
+      "context": "중요한 임무 전날 밤의 긴장감이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "편안하게 쉴 수 있구나! 좋은 습관이야!",
+        "mid": "조금 설레서 잠이 안 오는 건 자연스러워!",
+        "low": "많이 긴장되는구나. 미리 준비하고, 충분히 쉬는 연습을 해봐!"
+      }
+    },
+    {
+      "id": "motivation_027",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "공부한 내용을 다른 사람에게 설명하고 싶나요?",
+      "context": "하루가 배운 기술을 동료에게 가르쳐주고 싶어하듯...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "가르치고 싶어하는구나! 설명하면 더 잘 이해돼!",
+        "mid": "가끔 설명해보는 것도 좋아!",
+        "low": "다른 사람에게 설명하면 내 이해도 깊어져! 시도해봐!"
+      }
+    },
+    {
+      "id": "motivation_028",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "공부할 때 휴대폰이나 게임 생각이 나나요?",
+      "context": "훈련 중 다른 생각이 날 때의 마음이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "집중을 잘 유지하는구나! 훌륭해!",
+        "mid": "가끔 다른 생각이 나는 건 자연스러워!",
+        "low": "유혹이 많이 느껴지는구나. 공부 전에 멀리 두고, 보상은 끝나고!"
+      }
     }
   ],
   "analysisGuide": {
@@ -335,7 +485,7 @@
     "profileInterpretation": {
       "balancedPositive": "학습에 대한 전반적으로 긍정적인 태도. 현재 상태 유지하며 도전 수준 조절.",
       "highAnxietyLowInterest": "불안이 흥미를 억압할 수 있음. 불안 감소가 우선, 이후 흥미 개발.",
-      "lowMotivationGood Attitude": "습관은 있으나 동기 부족. 관심사 연결로 내적 동기 형성 필요.",
+      "lowMotivationGoodAttitude": "습관은 있으나 동기 부족. 관심사 연결로 내적 동기 형성 필요.",
       "emotionallyDisengaged": "정서적 연결 부재. 관계적 접근과 공감적 지지가 우선."
     },
     "strengthMessages": {

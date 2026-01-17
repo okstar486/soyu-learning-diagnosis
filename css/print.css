@@ -1,0 +1,338 @@
+/**
+ * 소유 학습 진단 앱 - 인쇄용 스타일시트
+ * A4 용지 최적화, 흑백 친화적 디자인
+ */
+
+/* 기본 인쇄 설정 */
+@media print {
+  /* 페이지 설정 */
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  /* 기본 요소 재설정 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 불필요한 요소 숨김 */
+  .no-print,
+  .app-header,
+  .character-container,
+  .progress-container,
+  .toast-container,
+  .modal-container,
+  .levelup-effect,
+  #loading-screen,
+  #btn-back,
+  #btn-mute,
+  #btn-export,
+  #btn-export-csv-simple,
+  #btn-export-csv-detailed,
+  #btn-reset,
+  #btn-print,
+  .password-form,
+  .export-section,
+  button,
+  .btn {
+    display: none !important;
+  }
+
+  /* 인쇄 전용 요소 표시 */
+  .print-only {
+    display: block !important;
+  }
+
+  /* 페이지 깨짐 방지 */
+  .dashboard-section,
+  .area-detail-card,
+  .analysis-card,
+  .chart-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* 섹션 간격 조정 */
+  .dashboard-section {
+    margin-bottom: 20pt;
+  }
+
+  /* 제목 스타일 */
+  .dashboard-section h2 {
+    color: #000 !important;
+    border-bottom: 2px solid #000 !important;
+    padding-bottom: 5pt;
+    margin-bottom: 10pt;
+    font-size: 14pt;
+  }
+
+  .dashboard-section h3 {
+    color: #000 !important;
+    font-size: 12pt;
+    margin-bottom: 8pt;
+  }
+
+  /* 요약 카드 */
+  .summary-cards {
+    display: flex !important;
+    gap: 10pt;
+    margin-bottom: 15pt;
+  }
+
+  .summary-card {
+    flex: 1;
+    background: #f5f5f5 !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5pt;
+    padding: 10pt;
+    text-align: center;
+  }
+
+  .summary-value {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #000 !important;
+    display: block;
+    margin-bottom: 5pt;
+  }
+
+  .summary-label {
+    font-size: 10pt;
+    color: #666 !important;
+  }
+
+  /* 차트 컨테이너 */
+  .chart-container {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5pt;
+    padding: 15pt;
+    max-width: 400pt;
+    margin: 0 auto 15pt auto;
+    text-align: center;
+  }
+
+  .chart-container canvas {
+    max-height: 300pt !important;
+  }
+
+  /* 영역별 상세 */
+  .area-details {
+    margin-bottom: 15pt;
+  }
+
+  .area-detail-card {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5pt;
+    padding: 10pt;
+    margin-bottom: 10pt;
+  }
+
+  .area-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 8pt;
+    margin-bottom: 5pt;
+  }
+
+  .area-detail-header .area-icon {
+    font-size: 16pt;
+  }
+
+  .area-detail-header .area-name {
+    flex: 1;
+    font-weight: bold;
+    color: #000 !important;
+  }
+
+  .area-detail-header .area-score {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000 !important;
+  }
+
+  .area-detail-body {
+    font-size: 10pt;
+    color: #666 !important;
+    margin-bottom: 5pt;
+  }
+
+  .area-progress-bar {
+    height: 8pt;
+    background: #e0e0e0 !important;
+    border-radius: 4pt;
+    overflow: hidden;
+  }
+
+  .area-progress-fill {
+    height: 100%;
+    background: #666 !important;
+  }
+
+  /* 분석 카드 */
+  .analysis-cards {
+    display: flex !important;
+    gap: 15pt;
+    margin-bottom: 15pt;
+  }
+
+  .analysis-card {
+    flex: 1;
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5pt;
+    padding: 10pt;
+  }
+
+  .analysis-card h3 {
+    font-size: 12pt;
+    margin-bottom: 8pt;
+    color: #000 !important;
+  }
+
+  .analysis-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .analysis-card li {
+    padding: 5pt 0;
+    border-bottom: 1px solid #e0e0e0 !important;
+    color: #000 !important;
+    font-size: 10pt;
+  }
+
+  .analysis-card li:last-child {
+    border-bottom: none !important;
+  }
+
+  /* 전략 콘텐츠 */
+  .strategy-content {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5pt;
+    padding: 10pt;
+  }
+
+  .strategy-item {
+    margin-bottom: 8pt;
+    line-height: 1.6;
+    color: #000 !important;
+    font-size: 10pt;
+  }
+
+  .strategy-item strong {
+    color: #000 !important;
+  }
+
+  /* 인쇄 전용 헤더 */
+  .print-header {
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 3px solid #000;
+  }
+
+  .print-logo {
+    font-size: 20pt;
+    font-weight: bold;
+    color: #000 !important;
+    margin-bottom: 5pt;
+  }
+
+  .print-title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #000 !important;
+    margin-bottom: 5pt;
+  }
+
+  .print-date {
+    font-size: 10pt;
+    color: #666 !important;
+  }
+
+  /* 인쇄 전용 푸터 */
+  .print-footer {
+    margin-top: 20pt;
+    padding-top: 10pt;
+    border-top: 2px solid #000;
+    text-align: center;
+    font-size: 10pt;
+    color: #666 !important;
+  }
+
+  .print-footer-message {
+    margin-bottom: 5pt;
+    font-style: italic;
+  }
+
+  .print-footer-character {
+    font-size: 14pt;
+    margin-bottom: 3pt;
+  }
+
+  /* 링크 스타일 */
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666 !important;
+  }
+
+  /* 테이블이 있는 경우 */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10pt;
+  }
+
+  th, td {
+    border: 1px solid #ccc !important;
+    padding: 5pt;
+    text-align: left;
+    color: #000 !important;
+  }
+
+  th {
+    background: #f5f5f5 !important;
+    font-weight: bold;
+  }
+
+  /* 강제 페이지 나누기 */
+  .page-break {
+    page-break-after: always;
+    break-after: always;
+  }
+
+  /* 페이지 나누기 방지 */
+  .no-page-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+/* 인쇄 미리보기 모드 (개발용) */
+@media screen {
+  .print-only {
+    display: none;
+  }
+}

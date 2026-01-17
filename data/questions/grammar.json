@@ -3,7 +3,7 @@
   "areaName": "문법 기초",
   "areaIcon": "✏️",
   "themeStory": "귀살대 보고서를 정확하게 쓰려면 문법을 알아야 해! 하루와 함께 바른 글쓰기를 배워보자!",
-  "totalQuestions": 20,
+  "totalQuestions": 30,
   "description": "맞춤법, 띄어쓰기, 문장 구조 등 기본적인 문법 지식을 진단합니다.",
   "categories": {
     "spelling": "맞춤법 - 올바른 글자 표기",
@@ -290,6 +290,146 @@
       "feedback": {
         "correct": "맞아! '커피'는 사물이라 높일 수 없어. '나왔습니다'가 맞아!",
         "incorrect": "사람이 아닌 것에 '-시-'를 붙이면 어색해!"
+      }
+    },
+    {
+      "id": "grammar_021",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "하루가 임무 보고서를 쓰고 있어요.",
+      "options": ["맞추법", "맞춤법", "맏춤법", "맞춥법"],
+      "answer": 1,
+      "feedback": {
+        "correct": "정확해! '맞춤법'이 올바른 표기야!",
+        "incorrect": "'맞춤'은 '맞추다'에서 온 말이야. 'ㅁ' 받침으로 써야 해!"
+      }
+    },
+    {
+      "id": "grammar_022",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "spacing",
+      "question": "다음 중 띄어쓰기가 바른 것은?",
+      "context": "숫자와 단위의 띄어쓰기야.",
+      "options": ["3 개", "3개", "삼 개", "삼개"],
+      "answer": 1,
+      "feedback": {
+        "correct": "맞아! 숫자와 단위는 붙여 써!",
+        "incorrect": "아라비아 숫자와 단위는 붙여 쓰는 게 원칙이야!"
+      }
+    },
+    {
+      "id": "grammar_023",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "grammar",
+      "question": "'비가 오는데 우산을 안 가져왔다'에서 '는데'의 역할은?",
+      "context": "연결어미의 의미를 파악해봐요.",
+      "options": ["이유", "나열", "대조", "시간"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '~는데'는 뒤 문장의 이유나 배경을 제시해!",
+        "incorrect": "'비가 온다'는 '우산을 안 가져온' 상황의 배경이 돼!"
+      }
+    },
+    {
+      "id": "grammar_024",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "비슷한 소리가 나는 말이에요.",
+      "options": ["돼지", "되지", "돼지", "됴이"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! 동물 이름은 '돼지'야!",
+        "incorrect": "동물 '돼지'와 '되다'의 활용형 '되지'를 구분해야 해!"
+      }
+    },
+    {
+      "id": "grammar_025",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "grammar",
+      "question": "'하루가 열심히 연습한 덕분에 성공했다'에서 부사어는?",
+      "context": "문장 성분 중 부사어를 찾아봐요.",
+      "options": ["하루가", "열심히", "연습한", "성공했다"],
+      "answer": 1,
+      "feedback": {
+        "correct": "정확해! '열심히'는 '연습한'을 꾸며주는 부사어야!",
+        "incorrect": "부사어는 용언을 꾸며주는 말이야. 보통 '-히', '-게' 등으로 끝나!"
+      }
+    },
+    {
+      "id": "grammar_026",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "spacing",
+      "question": "다음 중 띄어쓰기가 바른 것은?",
+      "context": "하루가 편지를 쓰고 있어요.",
+      "options": ["잘 부탁합니다", "잘부탁합니다", "잘부 탁합니다", "잘 부탁 합니다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '잘'은 부사라서 띄어 쓰고, '부탁합니다'는 붙여 써!",
+        "incorrect": "부사는 띄어 쓰고, '부탁하다'는 한 단어라서 붙여 써!"
+      }
+    },
+    {
+      "id": "grammar_027",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "honorific",
+      "question": "다음 중 겸양어가 올바르게 사용된 것은?",
+      "context": "자신을 낮추어 상대를 높이는 표현이에요.",
+      "options": ["제가 여쭤볼게요", "제가 물어볼게요", "저가 여쭤볼게요", "나가 물어볼게요"],
+      "answer": 0,
+      "feedback": {
+        "correct": "훌륭해! '제가'(나를 낮춤) + '여쭤보다'(묻다의 겸양어)가 올바른 표현이야!",
+        "incorrect": "'나'의 겸양어는 '저', '묻다'의 겸양어는 '여쭙다'야!"
+      }
+    },
+    {
+      "id": "grammar_028",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "grammar",
+      "question": "'탄지로는 검을 들고 혈귀와 싸웠다'에서 서술어는?",
+      "context": "서술어를 찾아봐요.",
+      "options": ["탄지로는", "검을", "들고", "싸웠다"],
+      "answer": 3,
+      "feedback": {
+        "correct": "맞아! '싸웠다'가 주어 '탄지로는'의 동작을 설명하는 서술어야!",
+        "incorrect": "서술어는 주어가 '무엇이다/어떠하다/무엇을 하다'를 나타내는 말이야!"
+      }
+    },
+    {
+      "id": "grammar_029",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "외래어 표기법이에요.",
+      "options": ["캐릭터", "케릭터", "캐릭타", "케릭타"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! 외래어는 '캐릭터'로 써!",
+        "incorrect": "외래어는 원음에 가깝게 적되, 받침은 'ㄱ, ㄴ, ㄹ, ㅁ, ㅂ, ㅇ'만 써!"
+      }
+    },
+    {
+      "id": "grammar_030",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "grammar",
+      "question": "다음 문장에서 '-지만'의 의미로 가장 알맞은 것은? '하루는 어리지만 용감하다'",
+      "context": "연결어미의 의미를 파악해봐요.",
+      "options": ["원인", "조건", "대조", "목적"],
+      "answer": 2,
+      "feedback": {
+        "correct": "정확해! '-지만'은 앞뒤 내용이 서로 반대되거나 대조될 때 써!",
+        "incorrect": "'어리다'와 '용감하다'는 보통 함께 나타나지 않는 반대 성질이야!"
       }
     }
   ],
