@@ -18,7 +18,9 @@ const Diagnosis = {
     correct: 0,
     total: 0,
     answers: [],
-    difficulties: []
+    difficulties: [],
+    scaleScores: [],  // scale 문제 점수 저장
+    scaleTotal: 0     // scale 문제 총 점수
   },
 
   /**
@@ -67,7 +69,9 @@ const Diagnosis = {
       correct: 0,
       total: 0,
       answers: [],
-      difficulties: []
+      difficulties: [],
+      scaleScores: [],
+      scaleTotal: 0
     };
 
     // 문제 로드
@@ -103,9 +107,11 @@ const Diagnosis = {
     // 문제 유형에 따른 처리
     if (question.type === 'scale') {
       result = Questions.handleScaleAnswer(answerIndex);
-      // 스케일 문제는 정답/오답 없음
+      // 스케일 문제: 점수 저장 (1-5점)
       this.currentResults.total++;
       this.currentResults.answers.push(answerIndex);
+      this.currentResults.scaleScores.push(result.score);
+      this.currentResults.scaleTotal += result.score;
     } else {
       result = Questions.checkAnswer(answerIndex);
 
@@ -268,9 +274,25 @@ const Diagnosis = {
     const results = Storage.loadResults();
     const summary = {};
 
+    // scale 문제만 있는 영역들
+    const scaleOnlyAreas = ['self-efficacy', 'motivation', 'strength'];
+
     this.areaOrder.forEach(area => {
       const areaInfo = Questions.getAreaInfo(area);
       const result = results[area];
+
+      let accuracy = 0;
+      if (result) {
+        if (scaleOnlyAreas.includes(area)) {
+          // scale 영역: 총점 / 최대점수(5점 * 문항수) * 100
+          const maxScore = result.total * 5;
+          const totalScore = result.scaleTotal || 0;
+          accuracy = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
+        } else {
+          // choice 영역: 정답수 / 총문항수 * 100
+          accuracy = result.total > 0 ? Math.round((result.correct / result.total) * 100) : 0;
+        }
+      }
 
       summary[area] = {
         name: areaInfo?.name || area,
@@ -278,8 +300,11 @@ const Diagnosis = {
         completed: !!result,
         correct: result?.correct || 0,
         total: result?.total || 0,
-        accuracy: result ? Math.round((result.correct / result.total) * 100) : 0,
-        time: result?.time || 0
+        accuracy: accuracy,
+        time: result?.time || 0,
+        // scale 영역 추가 정보
+        scaleTotal: result?.scaleTotal || 0,
+        scaleScores: result?.scaleScores || []
       };
     });
 
@@ -315,7 +340,9 @@ const Diagnosis = {
       correct: 0,
       total: 0,
       answers: [],
-      difficulties: []
+      difficulties: [],
+      scaleScores: [],
+      scaleTotal: 0
     };
     Questions.reset();
     Storage.clear();
