@@ -1,0 +1,112 @@
+<!-- 문제 페이지 -->
+<div class="question-page">
+  <div id="question-container" class="question-container">
+    <!-- 문제 내용이 JavaScript로 동적 생성됩니다 -->
+    <div class="loading-placeholder">
+      <div class="loading-icon pulsing">🦊</div>
+      <p>문제 준비 중...</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .question-page {
+    min-height: calc(100vh - var(--header-height) - var(--progress-height) - var(--spacing-lg) * 2);
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  .question-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .loading-placeholder {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-secondary);
+  }
+
+  .loading-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .question-context {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .context-text {
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary);
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .question-text {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .question-text h2 {
+    font-size: var(--font-size-xl);
+    line-height: 1.5;
+    color: var(--text-primary);
+  }
+
+  .feedback-container {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    text-align: center;
+  }
+
+  .feedback-text {
+    font-size: var(--font-size-lg);
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .explanation-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+  }
+
+  .next-container {
+    margin-top: var(--spacing-xl);
+  }
+
+  /* 스케일 컨테이너 (리커트 척도) */
+  .scale-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+
+  .scale-option {
+    flex: 1;
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    min-height: 60px;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+
+  .scale-option:hover {
+    border-color: var(--primary);
+    background: var(--bg-card-hover);
+  }
+
+  .scale-option.selected {
+    border-color: var(--primary);
+    background: rgba(147, 112, 219, 0.2);
+  }
+</style>

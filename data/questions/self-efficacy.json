@@ -1,0 +1,359 @@
+{
+  "area": "self-efficacy",
+  "areaName": "학습 자기효능감",
+  "areaIcon": "💪",
+  "themeStory": "하루도 처음엔 '나는 못해...'라고 생각했어. 하지만 작은 성공들이 쌓이면서 '나도 할 수 있어!'로 바뀌었지. 너의 마음을 솔직하게 이야기해줘!",
+  "totalQuestions": 18,
+  "description": "학습에 대한 자신감과 도전 의지를 진단합니다. 정답이 없으며, 솔직한 마음이 가장 중요해요.",
+  "scoringGuide": {
+    "high": "점수 4-5: 강한 자기효능감",
+    "mid": "점수 3: 보통 수준",
+    "low": "점수 1-2: 자기효능감 향상 필요"
+  },
+  "categories": {
+    "confidence": "학습 자신감",
+    "persistence": "도전과 지속성",
+    "attribution": "성공/실패 귀인",
+    "growth": "성장 마인드셋"
+  },
+  "questions": [
+    {
+      "id": "efficacy_001",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "confidence",
+      "question": "새로운 것을 배울 때 '나도 할 수 있어!'라고 생각하나요?",
+      "context": "하루가 처음 여우의 호흡을 배울 때의 마음이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "멋져! 그 자신감이 성공의 시작이야! 하루도 그렇게 시작했어!",
+        "mid": "조금씩 자신감을 키워가자! 작은 성공들이 쌓이면 달라질 거야!",
+        "low": "괜찮아, 하루도 처음엔 그랬어. 함께 작은 것부터 시작해보자!"
+      }
+    },
+    {
+      "id": "efficacy_002",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "persistence",
+      "question": "어려운 문제를 만나면 포기하고 싶어지나요?",
+      "context": "나비저택 훈련 중 힘든 순간이 있었어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": false,
+        "weights": [5, 4, 3, 2, 1]
+      },
+      "feedback": {
+        "high": "포기하지 않는 마음이 멋져! 진정한 귀살대원의 마음이야!",
+        "mid": "가끔 힘들 수 있어. 잠시 쉬었다 다시 해보는 것도 방법이야!",
+        "low": "괜찮아! 어려울 때 도움을 요청하는 것도 용기야. 하루도 그랬어!"
+      }
+    },
+    {
+      "id": "efficacy_003",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "persistence",
+      "question": "실수를 해도 다시 도전하고 싶은 마음이 드나요?",
+      "context": "하루가 호흡을 실패해도 다시 일어났어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "대단해! 실패해도 다시 도전하는 게 진짜 강함이야!",
+        "mid": "천천히 괜찮아. 쉬었다 다시 해도 돼! 네 페이스대로!",
+        "low": "실수는 배움의 기회야. 하루와 함께 천천히 다시 시작하자!"
+      }
+    },
+    {
+      "id": "efficacy_004",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attribution",
+      "question": "공부를 잘하면 내 노력 덕분이라고 생각하나요?",
+      "context": "하루가 수련 성과를 되돌아보고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 네 노력이 만든 결과야! 자랑스러워해도 돼!",
+        "mid": "운도 있지만, 네 노력이 가장 중요해! 그걸 기억해!",
+        "low": "네가 한 노력을 잊지 마. 그게 진짜 중요한 거야!"
+      }
+    },
+    {
+      "id": "efficacy_005",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "confidence",
+      "question": "모르는 것이 있으면 질문하는 편인가요?",
+      "context": "하루가 시노부에게 용기내어 물어보는 장면이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "질문하는 건 용기야! 하루도 그렇게 성장했어!",
+        "mid": "질문하기 어려울 때도 있지. 하지만 물어보면 더 빨리 배워!",
+        "low": "질문은 부끄러운 게 아니야. 모르는 걸 인정하는 것도 용기야!"
+      }
+    },
+    {
+      "id": "efficacy_006",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attribution",
+      "question": "시험을 못 보면 '내가 부족해서'라고 생각하나요?",
+      "context": "하루가 훈련에서 실패했을 때의 마음이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": false,
+        "weights": [5, 4, 3, 2, 1]
+      },
+      "feedback": {
+        "high": "좋아! 실패는 노력이 부족했을 뿐, 너 자체가 부족한 게 아니야!",
+        "mid": "가끔 그렇게 느낄 수 있어. 하지만 네가 아니라 방법을 바꾸면 돼!",
+        "low": "실패는 너의 가치와 관계없어! 방법을 바꾸면 다음엔 잘할 수 있어!"
+      }
+    },
+    {
+      "id": "efficacy_007",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "growth",
+      "question": "노력하면 더 똑똑해질 수 있다고 생각하나요?",
+      "context": "하루의 성장 마인드셋에 대한 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 뇌는 근육처럼 훈련할수록 강해져! 넌 이미 알고 있네!",
+        "mid": "반만 맞아! 노력하면 정말 뇌가 발달해. 과학적으로 증명됐어!",
+        "low": "사실 뇌는 훈련할수록 강해져! 하루도 그렇게 성장했어!"
+      }
+    },
+    {
+      "id": "efficacy_008",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "confidence",
+      "question": "친구들 앞에서 발표하는 것이 두렵나요?",
+      "context": "귀살대 회의에서 의견을 말해야 할 때...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": false,
+        "weights": [5, 4, 3, 2, 1]
+      },
+      "feedback": {
+        "high": "발표가 편하다니 대단해! 그 자신감을 다른 곳에도 써봐!",
+        "mid": "조금 떨리는 건 자연스러워. 준비를 잘하면 덜 떨려!",
+        "low": "많은 사람이 발표가 무서워. 연습을 많이 하면 나아져!"
+      }
+    },
+    {
+      "id": "efficacy_009",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "persistence",
+      "question": "어려운 과목도 노력하면 잘할 수 있다고 생각하나요?",
+      "context": "하루가 가장 어려운 호흡법에 도전할 때의 마음이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 그 마음이면 뭐든 할 수 있어!",
+        "mid": "어려워도 조금씩 하다보면 나아져! 하루도 그랬어!",
+        "low": "어려운 것도 작게 나누면 할 수 있어! 함께 해보자!"
+      }
+    },
+    {
+      "id": "efficacy_010",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attribution",
+      "question": "성적이 좋으면 '운이 좋았어'라고 생각하나요?",
+      "context": "성공의 원인을 어디서 찾는지에 대한 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": false,
+        "weights": [5, 4, 3, 2, 1]
+      },
+      "feedback": {
+        "high": "좋아! 성공은 네 노력의 결과야! 자신감을 가져!",
+        "mid": "운도 있지만, 노력이 더 중요해! 네 공로를 인정해줘!",
+        "low": "네 성공은 운이 아니야! 네가 노력했기 때문이야!"
+      }
+    },
+    {
+      "id": "efficacy_011",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "growth",
+      "question": "실수에서 배울 점을 찾으려고 하나요?",
+      "context": "하루가 실패한 훈련을 되돌아보고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "완벽해! 실수에서 배우는 게 진짜 성장이야!",
+        "mid": "조금씩 시도해봐! 실수를 분석하면 다음엔 더 잘해!",
+        "low": "실수는 최고의 선생님이야! 무엇이 잘못됐는지 찾아보자!"
+      }
+    },
+    {
+      "id": "efficacy_012",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "confidence",
+      "question": "'나는 공부에 소질이 없어'라고 생각한 적이 있나요?",
+      "context": "자신에 대한 생각을 묻는 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": false,
+        "weights": [5, 4, 3, 2, 1]
+      },
+      "feedback": {
+        "high": "좋아! 소질보다 노력이 더 중요해! 넌 잘하고 있어!",
+        "mid": "가끔 그런 생각이 들 수 있어. 하지만 소질보다 방법이 중요해!",
+        "low": "그런 생각이 들었구나. 사실 누구나 자기만의 방식으로 잘할 수 있어!"
+      }
+    },
+    {
+      "id": "efficacy_013",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "persistence",
+      "question": "처음엔 잘 안 돼도 계속 연습하면 나아진다고 생각하나요?",
+      "context": "하루가 반복 훈련의 중요성을 배우고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 연습은 거짓말을 하지 않아! 넌 이미 알고 있네!",
+        "mid": "맞아, 연습하면 나아져! 하루도 수천 번 연습했어!",
+        "low": "연습하면 정말 나아져! 하루도 처음엔 못했지만 연습으로 성장했어!"
+      }
+    },
+    {
+      "id": "efficacy_014",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "growth",
+      "question": "어려운 도전이 나를 더 강하게 만든다고 생각하나요?",
+      "context": "힘든 훈련이 하루를 성장시킨 것처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 도전이 너를 강하게 해! 성장 마인드셋의 소유자야!",
+        "mid": "힘들 땐 그렇게 느끼기 어렵지. 하지만 나중에 보면 성장해 있을 거야!",
+        "low": "어려운 일이 힘들게 느껴지는 건 자연스러워. 하지만 그게 성장의 기회야!"
+      }
+    },
+    {
+      "id": "efficacy_015",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "confidence",
+      "question": "나만의 장점이 있다고 생각하나요?",
+      "context": "모든 귀살대원에게는 특별한 강점이 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 네 장점을 잘 알고 있구나! 그걸 더 키워봐!",
+        "mid": "장점은 누구에게나 있어! 천천히 찾아보자!",
+        "low": "모든 사람에게 장점이 있어! 함께 네 장점을 찾아보자!"
+      }
+    },
+    {
+      "id": "efficacy_016",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attribution",
+      "question": "잘 안 될 때 '방법을 바꿔봐야겠다'고 생각하나요?",
+      "context": "하루가 새로운 훈련법을 시도하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "완벽해! 방법을 바꾸는 건 똑똑한 선택이야!",
+        "mid": "좋아, 같은 방법으로 안 되면 다른 방법을 찾는 게 좋아!",
+        "low": "안 될 땐 방법을 바꿔보자! 같은 방법만 반복하면 같은 결과가 나와!"
+      }
+    },
+    {
+      "id": "efficacy_017",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "persistence",
+      "question": "공부가 어려워도 끝까지 해보려고 하나요?",
+      "context": "마지막까지 포기하지 않는 귀살대원처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "끝까지 해내는 힘이 대단해! 진정한 귀살대원의 마음이야!",
+        "mid": "가끔 힘들 때 쉬어도 돼. 중요한 건 다시 시작하는 거야!",
+        "low": "어려우면 작게 나눠서 해보자! 조금씩이라도 하는 게 중요해!"
+      }
+    },
+    {
+      "id": "efficacy_018",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "growth",
+      "question": "지금보다 더 나아질 수 있다고 생각하나요?",
+      "context": "하루가 미래의 자신을 상상하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": {
+        "positive": true,
+        "weights": [1, 2, 3, 4, 5]
+      },
+      "feedback": {
+        "high": "맞아! 넌 계속 성장할 수 있어! 그 믿음을 간직해!",
+        "mid": "물론 나아질 수 있어! 조금씩 노력하면 분명히!",
+        "low": "누구나 성장할 수 있어! 하루도 처음엔 아무것도 몰랐지만 지금은 달라!"
+      }
+    }
+  ],
+  "analysisGuide": {
+    "dimensions": {
+      "confidence": "학습에 대한 기본적인 자신감 수준",
+      "persistence": "어려움에도 지속하려는 의지",
+      "attribution": "성공/실패의 원인을 어디서 찾는지",
+      "growth": "성장 가능성에 대한 믿음"
+    },
+    "interventionSuggestions": {
+      "lowConfidence": "작은 성공 경험 쌓기, 구체적인 칭찬, 도달 가능한 목표 설정",
+      "lowPersistence": "과제를 작게 나누기, 중간 보상, 휴식과 재시작 격려",
+      "externalAttribution": "노력과 결과의 연결 강조, 과정 중심 피드백",
+      "fixedMindset": "뇌 가소성 교육, 성장 사례 공유, 아직(yet)의 힘 강조"
+    }
+  }
+}

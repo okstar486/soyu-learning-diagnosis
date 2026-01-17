@@ -1,0 +1,32 @@
+<!-- 부모 대시보드 페이지 -->
+<div class="dashboard-page">
+  <div id="dashboard-container" class="dashboard-container">
+    <!-- 대시보드 내용이 JavaScript로 동적 생성됩니다 -->
+    <div class="loading-placeholder">
+      <div class="loading-icon pulsing">🔒</div>
+      <p>대시보드 로딩 중...</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dashboard-page {
+    min-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+  }
+
+  .dashboard-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .loading-placeholder {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-secondary);
+  }
+
+  .loading-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+</style>

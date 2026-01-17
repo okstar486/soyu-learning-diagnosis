@@ -1,0 +1,359 @@
+{
+  "area": "grammar",
+  "areaName": "문법 기초",
+  "areaIcon": "✏️",
+  "themeStory": "귀살대 보고서를 정확하게 쓰려면 문법을 알아야 해! 하루와 함께 바른 글쓰기를 배워보자!",
+  "totalQuestions": 20,
+  "description": "맞춤법, 띄어쓰기, 문장 구조 등 기본적인 문법 지식을 진단합니다.",
+  "categories": {
+    "spelling": "맞춤법 - 올바른 글자 표기",
+    "spacing": "띄어쓰기 - 올바른 띄어쓰기",
+    "grammar": "문법 - 문장 성분과 구조",
+    "honorific": "높임 표현 - 올바른 경어 사용"
+  },
+  "questions": [
+    {
+      "id": "grammar_001",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "하루가 보고서를 쓰고 있어요.",
+      "options": ["안녕히 계세요", "안녕이 계세요", "안녕히 게세요", "안녕이 게세요"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '안녕히 계세요'가 올바른 표현이야!",
+        "incorrect": "'안녕히'는 '편안하게'라는 뜻이고, '계세요'는 '있다'의 높임말이야."
+      }
+    },
+    {
+      "id": "grammar_002",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "spacing",
+      "question": "다음 중 띄어쓰기가 바른 것은?",
+      "context": "올바른 띄어쓰기를 찾아봐요.",
+      "options": ["할 수 있다", "할수 있다", "할 수있다", "할수있다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '할 수 있다'가 올바른 띄어쓰기야!",
+        "incorrect": "'할', '수', '있다'를 각각 띄어 써야 해!"
+      }
+    },
+    {
+      "id": "grammar_003",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "grammar",
+      "question": "'탄지로가 혈귀를 물리쳤다'에서 주어는 무엇일까요?",
+      "context": "문장 성분을 찾아보는 연습이에요.",
+      "options": ["탄지로가", "혈귀를", "물리쳤다", "탄지로가 혈귀를"],
+      "answer": 0,
+      "feedback": {
+        "correct": "정확해! '탄지로가'가 이 문장의 주어야!",
+        "incorrect": "주어는 '누가/무엇이'에 해당하는 말이야. '-가/-이'가 붙은 말을 찾아봐!"
+      }
+    },
+    {
+      "id": "grammar_004",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "grammar",
+      "question": "다음 빈칸에 알맞은 조사는? '하루____ 열심히 훈련했다'",
+      "context": "조사 사용법을 연습해요.",
+      "options": ["는", "을", "에게", "으로"],
+      "answer": 0,
+      "feedback": {
+        "correct": "잘했어! '하루는'이 자연스러운 표현이야!",
+        "incorrect": "주어 뒤에 오는 조사를 생각해봐! '는/은'은 주어에 붙어."
+      }
+    },
+    {
+      "id": "grammar_005",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "honorific",
+      "question": "다음 중 높임 표현이 올바른 것은?",
+      "context": "시노부에게 말할 때의 표현이에요.",
+      "options": ["시노부님, 가르쳐 주세요", "시노부님, 가르쳐 줘", "시노부, 가르쳐 주세요", "시노부님, 가르쳐 주시오"],
+      "answer": 0,
+      "feedback": {
+        "correct": "훌륭해! '-님'을 붙이고 '-주세요'로 끝내는 게 올바른 높임 표현이야!",
+        "incorrect": "높임말에서는 '-님'과 '-주세요'를 함께 써야 해!"
+      }
+    },
+    {
+      "id": "grammar_006",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "비슷하게 들리지만 다르게 쓰는 말이에요.",
+      "options": ["되었다", "됬다", "됐다", "둿다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '되었다'가 표준어야. '됐다'도 줄임말로 맞아!",
+        "incorrect": "'되다'의 과거형은 '되었다' 또는 '됐다'야."
+      }
+    },
+    {
+      "id": "grammar_007",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "헷갈리기 쉬운 표현이에요.",
+      "options": ["웬일이야", "왠일이야", "웬 일이야", "왠 일이야"],
+      "answer": 0,
+      "feedback": {
+        "correct": "정확해! '웬일이야'가 맞아!",
+        "incorrect": "'웬'은 '어째서인, 어떤'의 뜻이야. '왠지'만 '왜인지'에서 온 말이야."
+      }
+    },
+    {
+      "id": "grammar_008",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "grammar",
+      "question": "'시노부가 하루에게 검술을 가르쳤다'에서 목적어는?",
+      "context": "문장 성분을 찾아봐요.",
+      "options": ["검술을", "시노부가", "하루에게", "가르쳤다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '검술을'이 목적어야. '-을/-를'이 붙어!",
+        "incorrect": "목적어는 '무엇을/누구를'에 해당하는 말이야. '-을/-를'이 붙은 말을 찾아봐!"
+      }
+    },
+    {
+      "id": "grammar_009",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "발음과 표기가 다른 경우야.",
+      "options": ["넓다", "넙다", "널다", "넓타"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '넓다'가 맞는 표기야. 'ㄹㅂ' 받침이야!",
+        "incorrect": "'넓다'는 [널따]로 발음하지만, 'ㄹㅂ' 받침으로 써야 해!"
+      }
+    },
+    {
+      "id": "grammar_010",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "honorific",
+      "question": "'할머니께서 진지를 ____'에서 빈칸에 알맞은 말은?",
+      "context": "주체 높임법을 연습해요.",
+      "options": ["잡수셨다", "먹었다", "드셨다", "잡수다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "훌륭해! '잡수시다'는 '먹다'의 높임말이야!",
+        "incorrect": "'먹다'를 높이면 '잡수시다' 또는 '드시다'야."
+      }
+    },
+    {
+      "id": "grammar_011",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "spacing",
+      "question": "다음 중 띄어쓰기가 바른 것은?",
+      "context": "의존 명사의 띄어쓰기야.",
+      "options": ["먹을 것", "먹을것", "먹 을것", "먹 을 것"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '것'은 의존 명사라서 앞말과 띄어 써야 해!",
+        "incorrect": "'것', '수', '만큼' 같은 의존 명사는 앞말과 띄어 써!"
+      }
+    },
+    {
+      "id": "grammar_012",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "grammar",
+      "question": "다음 중 문장 성분이 잘못된 것은?",
+      "context": "문장의 호응 관계를 확인해봐요.",
+      "options": ["내가 바라는 것은 합격이다", "내가 바라는 것은 합격을 하고 싶다", "나는 합격을 바란다", "합격이 내 바람이다"],
+      "answer": 1,
+      "feedback": {
+        "correct": "맞아! '~것은 ~이다'로 호응해야 하는데 '~하고 싶다'가 와서 어색해!",
+        "incorrect": "주어와 서술어가 어울리는지 확인해봐!"
+      }
+    },
+    {
+      "id": "grammar_013",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "spelling",
+      "question": "'____ 학교에 갔다'에서 빈칸에 알맞은 것은?",
+      "context": "'어떻게'와 '어떡해'를 구분해봐요.",
+      "options": ["어떻게", "어떡해", "어떻겡", "어떻케"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '어떻게'는 '어떤 방법으로'라는 뜻이야!",
+        "incorrect": "'어떻게'는 방법을, '어떡해'는 '어떻게 해'의 줄임말이야."
+      }
+    },
+    {
+      "id": "grammar_014",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "grammar",
+      "question": "다음 중 피동 표현이 올바른 것은?",
+      "context": "능동과 피동을 구분해봐요.",
+      "options": ["문이 열렸다", "문이 열려졌다", "문을 열려졌다", "문이 열렸졌다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '열리다'가 이미 피동이라 '열렸다'가 맞아!",
+        "incorrect": "'열리다'는 이미 피동형이야. '-어지다'를 또 붙이면 이중피동이 돼!"
+      }
+    },
+    {
+      "id": "grammar_015",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "honorific",
+      "question": "'선생님, 교실에 ____ 계세요?'에서 빈칸에 알맞은 것은?",
+      "context": "높임말의 올바른 사용이에요.",
+      "options": ["있으시-", "있으-", "계시-", "있-"],
+      "answer": 0,
+      "feedback": {
+        "correct": "정확해! '있으시다'가 '-시-'를 넣은 올바른 높임 표현이야!",
+        "incorrect": "높임말에서는 '-시-'를 넣어야 해!"
+      }
+    },
+    {
+      "id": "grammar_016",
+      "type": "choice",
+      "difficulty": 2,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "사이시옷 규칙이에요.",
+      "options": ["뒷자리", "뒤자리", "듯자리", "뒤짜리"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '뒤'와 '자리' 사이에 사이시옷이 들어가!",
+        "incorrect": "합성어에서 뒷소리가 된소리로 나면 사이시옷을 넣어!"
+      }
+    },
+    {
+      "id": "grammar_017",
+      "type": "choice",
+      "difficulty": 3,
+      "category": "spacing",
+      "question": "다음 중 띄어쓰기가 바른 것은?",
+      "context": "보조 용언의 띄어쓰기야.",
+      "options": ["먹어 버렸다", "먹어버렸다", "먹 어 버렸다", "먹 어버렸다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! 보조 용언 '버리다'는 본용언과 띄어 쓰는 게 원칙이야!",
+        "incorrect": "보조 용언은 앞말과 띄어 쓰는 게 원칙이야. 붙여 써도 허용되지만!"
+      }
+    },
+    {
+      "id": "grammar_018",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "grammar",
+      "question": "'사과와 배, 그리고 귤을 샀다'에서 쉼표 사용이 옳은 이유는?",
+      "context": "문장 부호 사용법이에요.",
+      "options": ["같은 성분을 나열할 때 쉼표를 씀", "문장을 끝낼 때 쉼표를 씀", "주어 다음에 쉼표를 씀", "서술어 앞에 쉼표를 씀"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! 같은 자격의 말을 나열할 때 쉼표로 구분해!",
+        "incorrect": "쉼표는 같은 성분을 나열할 때, 문장을 끊을 때 사용해!"
+      }
+    },
+    {
+      "id": "grammar_019",
+      "type": "choice",
+      "difficulty": 4,
+      "category": "spelling",
+      "question": "다음 중 맞춤법이 바른 것은?",
+      "context": "헷갈리기 쉬운 표현이에요.",
+      "options": ["금세", "금새", "금쎄", "금쌔"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '금세'(금시에)가 맞는 표기야!",
+        "incorrect": "'금세'는 '금방, 곧'이라는 뜻이야. '금새'가 아니야!"
+      }
+    },
+    {
+      "id": "grammar_020",
+      "type": "choice",
+      "difficulty": 5,
+      "category": "honorific",
+      "question": "다음 중 높임 표현이 어색한 것은?",
+      "context": "높임말의 잘못된 사용을 찾아봐요.",
+      "options": ["커피 나오셨습니다", "아버지께서 오셨습니다", "선생님, 말씀 드릴 게 있습니다", "할머니께 선물을 드렸습니다"],
+      "answer": 0,
+      "feedback": {
+        "correct": "맞아! '커피'는 사물이라 높일 수 없어. '나왔습니다'가 맞아!",
+        "incorrect": "사람이 아닌 것에 '-시-'를 붙이면 어색해!"
+      }
+    }
+  ],
+  "analysisGuide": {
+    "categoryDescriptions": {
+      "spelling": "올바른 글자 표기 능력 (받침, 모음, 헷갈리는 표현)",
+      "spacing": "띄어쓰기 규칙 이해 (의존 명사, 보조 용언, 조사)",
+      "grammar": "문장 성분과 구조 이해 (주어, 목적어, 서술어, 호응)",
+      "honorific": "올바른 높임 표현 사용 (주체 높임, 객체 높임, 상대 높임)"
+    },
+    "interventionSuggestions": {
+      "lowSpelling": {
+        "description": "맞춤법 실수가 많은 경우",
+        "strategies": [
+          "자주 틀리는 단어 목록 만들어 반복 학습",
+          "발음과 표기가 다른 단어 집중 연습",
+          "받아쓰기 연습 (짧은 문장부터)",
+          "맞춤법 검사기로 스스로 교정해보기",
+          "어원으로 이해하기 (예: '되다/돼다' 구분법)"
+        ]
+      },
+      "lowSpacing": {
+        "description": "띄어쓰기 오류가 많은 경우",
+        "strategies": [
+          "의존 명사 목록 암기 (것, 수, 만큼, 뿐 등)",
+          "조사와 어미 구분 연습",
+          "보조 용언 띄어쓰기 원칙 학습",
+          "문장 분석하며 띄어쓰기 이유 설명하기",
+          "신문 기사 읽으며 띄어쓰기 패턴 익히기"
+        ]
+      },
+      "lowGrammar": {
+        "description": "문법 이해가 부족한 경우",
+        "strategies": [
+          "문장 성분 찾기 연습 (누가/무엇이/어디서/어떻게)",
+          "주어-서술어 호응 연습",
+          "문장 확장하기 (간단→복잡)",
+          "틀린 문장 고치기 연습",
+          "일기 쓰기로 자연스러운 문장 연습"
+        ]
+      },
+      "lowHonorific": {
+        "description": "높임 표현 사용이 어려운 경우",
+        "strategies": [
+          "높임 대상별 어휘 정리 (진지/밥, 주무시다/자다 등)",
+          "상황별 대화문 연습",
+          "높임법 종류 구분 (주체/객체/상대)",
+          "드라마나 영화에서 높임 표현 찾아보기",
+          "가족/선생님께 편지 쓰기 연습"
+        ]
+      }
+    },
+    "strengthMessages": {
+      "spelling": "맞춤법 실력이 뛰어나! 글을 정확하게 쓸 줄 아는 건 큰 장점이야!",
+      "spacing": "띄어쓰기를 정확하게 알고 있어! 글이 깔끔하게 읽히겠네!",
+      "grammar": "문장 구조를 잘 이해하고 있어! 논리적인 글쓰기의 기초가 탄탄해!",
+      "honorific": "상황에 맞는 높임 표현을 잘 써! 예의 바른 의사소통 능력이 훌륭해!"
+    },
+    "difficultyProgression": {
+      "1": "초4 수준 - 기본 맞춤법과 간단한 띄어쓰기",
+      "2": "초5 수준 - 자주 틀리는 맞춤법, 의존 명사 띄어쓰기",
+      "3": "초6 수준 - 문장 성분 구분, 기본 높임 표현",
+      "4": "중1 기초 - 복잡한 맞춤법, 이중피동, 문장 호응",
+      "5": "중1 심화 - 어색한 표현 찾기, 사물 높임 오류"
+    }
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "area": "motivation",
+  "areaName": "학습 동기/정서",
+  "areaIcon": "❤️",
+  "themeStory": "공부할 때 어떤 마음이 드는지 하루에게 이야기해줘! 좋은 마음, 힘든 마음 모두 괜찮아. 솔직하게 표현하는 게 중요해!",
+  "totalQuestions": 18,
+  "description": "학습에 대한 감정, 흥미, 태도를 진단합니다. 정답이 없으며, 솔직한 마음이 가장 중요해요.",
+  "categories": {
+    "interest": "학습 흥미 - 배움에 대한 즐거움",
+    "anxiety": "학습 불안 - 공부와 관련된 걱정",
+    "attitude": "학습 태도 - 공부에 대한 자세",
+    "emotion": "학습 정서 - 공부할 때의 감정"
+  },
+  "questions": [
+    {
+      "id": "motivation_001",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "새로운 것을 배우는 게 재미있나요?",
+      "context": "하루가 새 기술을 배울 때의 마음이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "배움을 즐기는 마음이 멋져! 호기심은 최고의 동기야!",
+        "mid": "가끔은 재미없을 수도 있어. 재미있는 부분을 찾아보자!",
+        "low": "괜찮아, 재미있는 방법을 함께 찾아보자! 귀멸 이야기처럼!"
+      }
+    },
+    {
+      "id": "motivation_002",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "anxiety",
+      "question": "시험 볼 때 너무 긴장되나요?",
+      "context": "시노부 앞에서 실력을 보여야 할 때의 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "시험에서 편안하다니 좋아! 그 여유를 유지해!",
+        "mid": "조금 긴장하는 건 자연스러워. 적당한 긴장은 집중에 도움이 돼!",
+        "low": "많이 긴장되는구나. 심호흡하고, 준비한 만큼 잘할 거야!"
+      }
+    },
+    {
+      "id": "motivation_003",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "특별히 좋아하는 과목이 있나요?",
+      "context": "하루에게도 가장 좋아하는 훈련이 있어요.",
+      "scaleLabels": ["전혀 없어", "별로", "보통", "있는 편", "정말 있어!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "좋아하는 과목이 있다니 좋아! 그 열정을 다른 과목에도 연결해봐!",
+        "mid": "천천히 찾아도 돼. 관심 가는 분야가 생길 거야!",
+        "low": "아직 못 찾았어도 괜찮아. 함께 찾아보자!"
+      }
+    },
+    {
+      "id": "motivation_004",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "공부를 미루는 편인가요?",
+      "context": "훈련을 미루고 싶었던 하루의 경험이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "미루지 않고 바로 하는 습관이 멋져!",
+        "mid": "가끔 미루고 싶은 건 자연스러워. 작은 것부터 시작해보자!",
+        "low": "하루도 그랬어. 5분만 해보자! 시작이 가장 어려워!"
+      }
+    },
+    {
+      "id": "motivation_005",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "emotion",
+      "question": "공부를 마치면 뿌듯한 기분이 드나요?",
+      "context": "하루가 수련을 마친 후의 기분이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "그 뿌듯함을 기억해! 계속 느낄 수 있을 거야!",
+        "mid": "조금이라도 뿌듯함을 느끼면 성공이야!",
+        "low": "작은 성취도 축하해줘야 해. 하루가 응원할게!"
+      }
+    },
+    {
+      "id": "motivation_006",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "anxiety",
+      "question": "모르는 문제가 나오면 당황하나요?",
+      "context": "예상치 못한 혈귀를 만난 것처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "당황하지 않고 침착하다니 대단해!",
+        "mid": "조금 당황하는 건 자연스러워. 일단 아는 것부터 풀어봐!",
+        "low": "괜찮아! 모르는 건 넘기고 아는 것부터 하면 돼!"
+      }
+    },
+    {
+      "id": "motivation_007",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "궁금한 것이 있으면 더 찾아보고 싶나요?",
+      "context": "하루가 새로운 호흡법에 대해 더 알고 싶어할 때...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "호기심이 넘치는구나! 그게 진짜 배움의 시작이야!",
+        "mid": "가끔 궁금할 때 찾아보는 것도 좋아!",
+        "low": "궁금한 게 생기면 찾아보는 습관을 길러보자!"
+      }
+    },
+    {
+      "id": "motivation_008",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "숙제를 할 때 집중이 잘 되나요?",
+      "context": "훈련에 집중하는 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "집중력이 좋구나! 그 능력을 잘 활용해!",
+        "mid": "집중이 어려울 땐 짧게 나눠서 해보자!",
+        "low": "조용한 환경을 만들고, 짧은 시간부터 시작해보자!"
+      }
+    },
+    {
+      "id": "motivation_009",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "emotion",
+      "question": "성적이 잘 안 나오면 속상한가요?",
+      "context": "훈련에서 좋은 결과가 안 나왔을 때의 하루...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "성적에 너무 연연하지 않아도 돼. 과정이 중요해!",
+        "mid": "조금 속상한 건 자연스러워. 다음에 더 잘하면 돼!",
+        "low": "많이 속상하구나. 성적이 전부가 아니야. 노력한 네가 멋져!"
+      }
+    },
+    {
+      "id": "motivation_010",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "수업 시간이 재미있나요?",
+      "context": "시노부의 수업을 듣는 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "수업이 재미있다니 좋아! 그 마음을 유지해!",
+        "mid": "재미있는 부분을 찾아보자! 모든 수업에 숨겨진 재미가 있어!",
+        "low": "수업이 지루할 수 있어. 관심 있는 부분을 연결해보자!"
+      }
+    },
+    {
+      "id": "motivation_011",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "anxiety",
+      "question": "발표할 때 심장이 두근거리나요?",
+      "context": "귀살대 앞에서 자기소개를 해야 할 때...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "발표에 자신감이 있구나! 대단해!",
+        "mid": "약간 떨리는 건 정상이야. 준비를 잘하면 덜 떨려!",
+        "low": "많이 떨리는구나. 작은 발표부터 연습해보자!"
+      }
+    },
+    {
+      "id": "motivation_012",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "모르는 것을 그냥 넘기는 편인가요?",
+      "context": "어려운 부분을 대하는 태도에 대한 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "모르는 걸 꼭 해결하려는 자세가 멋져!",
+        "mid": "가끔 넘기는 건 괜찮아. 중요한 건 나중에라도 해결하는 거야!",
+        "low": "모르는 건 표시해두고, 나중에 물어보거나 찾아보자!"
+      }
+    },
+    {
+      "id": "motivation_013",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "emotion",
+      "question": "공부할 때 짜증이 나는 편인가요?",
+      "context": "어려운 훈련에 지친 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "공부에 여유가 있구나! 좋아!",
+        "mid": "가끔 짜증나는 건 자연스러워. 쉬었다 하면 돼!",
+        "low": "많이 짜증나는구나. 잠깐 쉬고, 좋아하는 것부터 해보자!"
+      }
+    },
+    {
+      "id": "motivation_014",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "장래에 하고 싶은 일이 있나요?",
+      "context": "하루가 미래의 자신을 꿈꾸듯...",
+      "scaleLabels": ["전혀 없어", "별로", "보통", "있는 편", "정말 있어!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "꿈이 있다니 멋져! 그걸 위해 지금 뭘 할 수 있을지 생각해봐!",
+        "mid": "아직 찾는 중이구나. 천천히 찾아도 돼!",
+        "low": "아직 몰라도 괜찮아! 다양한 경험을 하다 보면 찾게 될 거야!"
+      }
+    },
+    {
+      "id": "motivation_015",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "attitude",
+      "question": "공부 계획을 세우는 편인가요?",
+      "context": "훈련 일정을 짜는 하루처럼...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "계획을 세우는 습관이 좋아! 체계적이네!",
+        "mid": "가끔 계획을 세워보면 도움이 될 거야!",
+        "low": "간단한 계획부터 시작해보자! 하루 3가지만 정해봐!"
+      }
+    },
+    {
+      "id": "motivation_016",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "emotion",
+      "question": "공부가 끝나면 해방된 기분이 드나요?",
+      "context": "훈련이 끝난 후의 하루...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "공부가 부담스럽지 않구나! 좋아!",
+        "mid": "끝나면 뿌듯하면서도 해방감이 드는 게 자연스러워!",
+        "low": "공부가 힘들게 느껴지는구나. 재미있는 방법을 찾아보자!"
+      }
+    },
+    {
+      "id": "motivation_017",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "anxiety",
+      "question": "부모님이 성적을 물어볼 때 불안한가요?",
+      "context": "스승에게 실력을 보고해야 할 때의 마음...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": false, "weights": [5, 4, 3, 2, 1] },
+      "feedback": {
+        "high": "편안하게 이야기할 수 있구나! 좋아!",
+        "mid": "조금 긴장되는 건 자연스러워!",
+        "low": "불안하구나. 성적보다 네 노력을 이야기해봐!"
+      }
+    },
+    {
+      "id": "motivation_018",
+      "type": "scale",
+      "difficulty": 1,
+      "category": "interest",
+      "question": "책 읽는 것을 좋아하나요?",
+      "context": "하루가 호흡법 책을 읽듯...",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5] },
+      "feedback": {
+        "high": "책을 좋아하는구나! 어휘력과 지식이 쑥쑥 늘 거야!",
+        "mid": "관심 있는 책부터 시작해보자!",
+        "low": "책이 어렵게 느껴지면 짧은 글부터 시작해봐!"
+      }
+    }
+  ],
+  "analysisGuide": {
+    "dimensions": {
+      "interest": "학습에 대한 흥미와 호기심 수준",
+      "anxiety": "학습 상황에서의 불안 수준",
+      "attitude": "학습에 대한 자세와 습관",
+      "emotion": "학습과 관련된 정서적 반응"
+    },
+    "interventionSuggestions": {
+      "lowInterest": {
+        "description": "학습에 대한 흥미가 낮은 경우",
+        "strategies": [
+          "관심사(귀멸의칼날 등)와 학습 내용 연결하기",
+          "게임화 요소 활용 (포인트, 레벨업, 보상)",
+          "15-20분 짧은 세션으로 시작하기",
+          "스스로 주제 선택할 기회 주기",
+          "실생활과 연결된 예시 활용하기"
+        ]
+      },
+      "highAnxiety": {
+        "description": "학습 불안이 높은 경우",
+        "strategies": [
+          "작고 확실한 성공 경험 쌓기",
+          "호흡법, 이완 기법 훈련",
+          "실패를 '수련'으로 재해석하기",
+          "시간 압박 줄이기, 충분한 연습 기회",
+          "결과보다 과정 칭찬하기"
+        ]
+      },
+      "poorAttitude": {
+        "description": "학습 태도가 좋지 않은 경우",
+        "strategies": [
+          "작은 습관부터 형성 (하루 5분 시작)",
+          "외적 보상에서 내적 동기로 점진적 전환",
+          "구체적이고 달성 가능한 목표 설정",
+          "학습 환경 정리와 루틴 만들기",
+          "자기 선택권 부여 (무엇을, 언제)"
+        ]
+      },
+      "negativeEmotion": {
+        "description": "학습 관련 부정 정서가 강한 경우",
+        "strategies": [
+          "감정 인식 및 표현 기회 제공",
+          "부정적 감정 인정하고 공감하기",
+          "즐거웠던 학습 경험 떠올리기",
+          "지지적이고 안전한 환경 조성",
+          "성취감 느낄 수 있는 활동 배치"
+        ]
+      }
+    },
+    "profileInterpretation": {
+      "balancedPositive": "학습에 대한 전반적으로 긍정적인 태도. 현재 상태 유지하며 도전 수준 조절.",
+      "highAnxietyLowInterest": "불안이 흥미를 억압할 수 있음. 불안 감소가 우선, 이후 흥미 개발.",
+      "lowMotivationGood Attitude": "습관은 있으나 동기 부족. 관심사 연결로 내적 동기 형성 필요.",
+      "emotionallyDisengaged": "정서적 연결 부재. 관계적 접근과 공감적 지지가 우선."
+    },
+    "strengthMessages": {
+      "interest": "배움에 대한 호기심이 넘쳐! 그게 가장 큰 재능이야!",
+      "anxiety": "시험이나 발표 상황에서도 침착해! 정말 대단해!",
+      "attitude": "공부하는 자세가 정말 좋아! 꾸준함이 실력을 만들어!",
+      "emotion": "공부하면서 좋은 감정을 느끼는 게 최고야!"
+    }
+  }
+}

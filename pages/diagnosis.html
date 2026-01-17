@@ -1,0 +1,94 @@
+<!-- 진단 페이지 (영역 선택) -->
+<div class="diagnosis-page">
+  <div class="diagnosis-header">
+    <h2>훈련 영역 선택</h2>
+    <p>도전하고 싶은 영역을 선택해주세요</p>
+  </div>
+
+  <div id="area-list" class="area-list">
+    <!-- 영역 카드들이 JavaScript로 동적 생성됩니다 -->
+    <div class="loading-placeholder">
+      <div class="loading-icon pulsing">🦊</div>
+      <p>영역 불러오는 중...</p>
+    </div>
+  </div>
+
+  <div class="diagnosis-footer">
+    <div class="progress-summary">
+      <span class="progress-label">전체 진행률</span>
+      <div class="progress-bar-mini">
+        <div id="overall-progress" class="progress-fill-mini" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .diagnosis-page {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+  }
+
+  .diagnosis-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .diagnosis-header h2 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .diagnosis-header p {
+    color: var(--text-secondary);
+  }
+
+  .area-list {
+    flex: 1;
+  }
+
+  .loading-placeholder {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-secondary);
+  }
+
+  .loading-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .diagnosis-footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .progress-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .progress-label {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    flex-shrink: 0;
+  }
+
+  .progress-bar-mini {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+  }
+
+  .progress-fill-mini {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+  }
+</style>

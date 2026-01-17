@@ -1,0 +1,466 @@
+/**
+ * 소유 학습 진단 앱 - 애니메이션
+ * 정답/오답, 레벨업, 캐릭터 효과
+ */
+
+/* ========================================
+   정답 효과 (Success)
+   ======================================== */
+@keyframes correctGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(var(--success-rgb), 0);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(var(--success-rgb), 0.6),
+                0 0 60px rgba(var(--success-rgb), 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(var(--success-rgb), 0);
+  }
+}
+
+@keyframes correctBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  60% {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes correctCheck {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.animate-correct {
+  animation: correctGlow 0.6s ease, correctBounce 0.6s ease;
+}
+
+/* ========================================
+   오답 효과 (Retry - 실패 아님!)
+   ======================================== */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px);
+  }
+  40%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes retryPulse {
+  0% {
+    box-shadow: 0 0 0 rgba(var(--retry-rgb), 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(var(--retry-rgb), 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(var(--retry-rgb), 0);
+  }
+}
+
+.animate-retry {
+  animation: shake 0.5s ease, retryPulse 0.5s ease;
+}
+
+/* ========================================
+   레벨업 효과 (Level Up)
+   ======================================== */
+@keyframes levelupGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(var(--accent-rgb), 0);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(var(--accent-rgb), 0.8),
+                0 0 100px rgba(var(--accent-rgb), 0.4);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+    transform: scale(1);
+  }
+}
+
+@keyframes levelupBurst {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes levelupSparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes levelupText {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.5);
+  }
+  60% {
+    transform: translateY(-10px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-levelup {
+  animation: levelupGlow 1s ease;
+}
+
+.animate-levelup-text {
+  animation: levelupText 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ========================================
+   파티클 효과 (Particles)
+   ======================================== */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes starBurst {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx, 100px), var(--ty, -100px)) scale(1);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+}
+
+.particle-confetti {
+  width: 10px;
+  height: 10px;
+  animation: confettiFall 2s ease-out forwards;
+}
+
+.particle-star {
+  width: 20px;
+  height: 20px;
+  animation: starBurst 0.8s ease-out forwards;
+}
+
+/* ========================================
+   캐릭터 애니메이션
+   ======================================== */
+@keyframes characterHappy {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes characterEncourage {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25%, 75% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes characterBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes characterFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.character-happy {
+  animation: characterHappy 0.6s ease;
+}
+
+.character-encourage {
+  animation: characterEncourage 0.5s ease;
+}
+
+.character-bounce {
+  animation: characterBounce 0.8s ease infinite;
+}
+
+.character-float {
+  animation: characterFloat 3s ease-in-out infinite;
+}
+
+/* ========================================
+   대화 버블 애니메이션
+   ======================================== */
+@keyframes dialogueAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes typingDots {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dialogue-appear {
+  animation: dialogueAppear 0.3s ease;
+}
+
+.typing-indicator span {
+  animation: typingDots 1.4s ease-in-out infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* ========================================
+   페이지 전환 애니메이션
+   ======================================== */
+@keyframes pageSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pageSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: pageSlideIn 0.3s ease;
+}
+
+.page-exit {
+  animation: pageSlideOut 0.3s ease;
+}
+
+/* ========================================
+   버튼 효과
+   ======================================== */
+@keyframes buttonPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes buttonRipple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn:active {
+  animation: buttonPop 0.2s ease;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: buttonRipple 0.6s ease-out;
+  pointer-events: none;
+}
+
+/* ========================================
+   진행률 바 애니메이션
+   ======================================== */
+@keyframes progressPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes progressComplete {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.progress-fill.animating {
+  animation: progressPulse 1s ease infinite;
+}
+
+.progress-fill.complete {
+  background: linear-gradient(90deg,
+    var(--success) 0%,
+    var(--accent) 50%,
+    var(--success) 100%);
+  background-size: 200% 100%;
+  animation: progressComplete 1s ease;
+}
+
+/* ========================================
+   스케일 척도 애니메이션
+   ======================================== */
+@keyframes scaleSelect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.scale-option.selected {
+  animation: scaleSelect 0.3s ease;
+}
+
+/* ========================================
+   로딩 애니메이션
+   ======================================== */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.pulsing {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ========================================
+   감소된 모션 설정
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "name": "소유 학습 진단 - 나비저택 특별 수련",
+  "short_name": "소유진단",
+  "description": "귀멸의칼날 테마 학습 진단 앱",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1a2e",
+  "theme_color": "#9370DB",
+  "lang": "ko",
+  "categories": ["education", "games"],
+  "icons": [
+    {
+      "src": "assets/images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-home.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "홈 화면"
+    },
+    {
+      "src": "assets/images/screenshot-diagnosis.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "진단 화면"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "진단 시작",
+      "short_name": "시작",
+      "description": "학습 진단 시작하기",
+      "url": "/?action=start",
+      "icons": [
+        {
+          "src": "assets/images/icon-start.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "이어하기",
+      "short_name": "이어하기",
+      "description": "진행 중인 진단 이어하기",
+      "url": "/?action=continue",
+      "icons": [
+        {
+          "src": "assets/images/icon-continue.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.cursor/
+
+# Node (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+build/
+
+# Local development
+*.local
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*~
+
+# Backup files
+*.bak
+*.backup
+
+# Test coverage
+coverage/
+
+# Private/sensitive files
+secrets/
+*.key
+*.pem
+
+# 개발용 메모
+notes/
+TODO.md
+scratch/
+
+# 캐시
+.cache/
+*.cache

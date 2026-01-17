@@ -1,0 +1,352 @@
+{
+  "area": "strength",
+  "areaName": "강점 발견",
+  "areaIcon": "⭐",
+  "themeStory": "모든 귀살대원에게는 특별한 강점이 있어! 탄지로는 후각, 젠이츠는 청각, 이노스케는 촉각... 너만의 강점을 찾아보자!",
+  "totalQuestions": 15,
+  "description": "학습 스타일과 개인적 강점을 발견합니다. 정답이 없으며, 자신을 더 잘 알기 위한 질문들이에요.",
+  "strengthTypes": {
+    "visual": { "name": "시각적 학습자", "icon": "👁️", "description": "그림과 색으로 배우면 효과적!" },
+    "auditory": { "name": "청각적 학습자", "icon": "👂", "description": "듣고 말하며 배우면 효과적!" },
+    "kinesthetic": { "name": "체험적 학습자", "icon": "✋", "description": "직접 해보며 배우면 효과적!" },
+    "reading": { "name": "읽기/쓰기 학습자", "icon": "📝", "description": "글로 읽고 쓰며 배우면 효과적!" },
+    "logical": { "name": "논리적 사고자", "icon": "🧩", "description": "이유와 규칙을 찾으며 배우면 효과적!" },
+    "social": { "name": "사회적 학습자", "icon": "👥", "description": "함께 배우면 효과적!" },
+    "independent": { "name": "독립적 학습자", "icon": "🎯", "description": "혼자 집중하며 배우면 효과적!" },
+    "creative": { "name": "창의적 사고자", "icon": "🎨", "description": "상상하고 만들며 배우면 효과적!" }
+  },
+  "questions": [
+    {
+      "id": "strength_001",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "그림이나 색을 사용해서 공부하면 더 잘 기억나나요?",
+      "context": "하루가 그림으로 기술을 정리하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "visual" },
+      "feedback": {
+        "high": "시각적 학습이 강점이네! 마인드맵이나 그림으로 정리하면 효과적이야!",
+        "mid": "시각 자료가 가끔 도움이 되는구나!",
+        "low": "그림보다 다른 방법이 맞을 수도 있어. 괜찮아!"
+      }
+    },
+    {
+      "id": "strength_002",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "소리 내어 읽거나 설명을 들으면 더 잘 이해되나요?",
+      "context": "하루가 시노부의 설명을 들으며 배우고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "auditory" },
+      "feedback": {
+        "high": "청각적 학습이 강점이네! 강의나 오디오북이 도움이 될 거야!",
+        "mid": "듣는 것도 가끔 도움이 되는구나!",
+        "low": "조용히 읽는 게 더 맞을 수도 있어!"
+      }
+    },
+    {
+      "id": "strength_003",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "직접 해보면서 배우는 게 좋나요?",
+      "context": "하루가 직접 검을 휘두르며 연습하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "kinesthetic" },
+      "feedback": {
+        "high": "체험적 학습이 강점이네! 실험이나 만들기 활동을 활용해봐!",
+        "mid": "실습이 가끔 도움이 되는구나!",
+        "low": "보고 듣는 것이 더 편할 수도 있어!"
+      }
+    },
+    {
+      "id": "strength_004",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "메모하거나 글로 정리하면 더 잘 외워지나요?",
+      "context": "하루가 호흡법을 노트에 정리하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "reading" },
+      "feedback": {
+        "high": "읽기/쓰기 학습이 강점이네! 노트 정리와 요약이 효과적이야!",
+        "mid": "가끔 적으면 도움이 되는구나!",
+        "low": "꼭 적지 않아도 괜찮아!"
+      }
+    },
+    {
+      "id": "strength_005",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "'왜 그런지' 이유를 알면 더 잘 이해되나요?",
+      "context": "하루가 호흡법의 원리를 궁금해하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "logical" },
+      "feedback": {
+        "high": "논리적 사고가 강점이네! 원리와 규칙을 찾으면 더 잘 이해할 거야!",
+        "mid": "이유를 아는 게 가끔 도움이 되는구나!",
+        "low": "꼭 이유를 몰라도 괜찮아. 결과만 알아도 돼!"
+      }
+    },
+    {
+      "id": "strength_006",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "친구들과 함께 공부하면 더 재미있나요?",
+      "context": "하루가 동료들과 함께 훈련하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "social" },
+      "feedback": {
+        "high": "사회적 학습이 강점이네! 스터디 그룹이나 토론이 도움이 될 거야!",
+        "mid": "가끔 함께하는 것도 좋구나!",
+        "low": "혼자 집중하는 게 더 맞을 수도 있어!"
+      }
+    },
+    {
+      "id": "strength_007",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "혼자 조용히 공부하는 게 더 집중이 잘 되나요?",
+      "context": "하루가 조용히 혼자 수련하는 시간이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "independent" },
+      "feedback": {
+        "high": "독립적 학습이 강점이네! 자기 페이스로 공부하면 효과적이야!",
+        "mid": "혼자도 좋고 함께도 좋을 때가 있구나!",
+        "low": "함께 공부하는 게 더 맞을 수도 있어!"
+      }
+    },
+    {
+      "id": "strength_008",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "새로운 아이디어나 방법을 상상하는 걸 좋아하나요?",
+      "context": "하루가 새로운 호흡 기술을 상상하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "creative" },
+      "feedback": {
+        "high": "창의적 사고가 강점이네! 상상력을 활용한 학습이 효과적이야!",
+        "mid": "가끔 상상하는 것도 좋아하는구나!",
+        "low": "정해진 방법을 따르는 것도 좋아!"
+      }
+    },
+    {
+      "id": "strength_009",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "영상이나 동영상으로 배우는 게 좋나요?",
+      "context": "시각적 학습을 더 자세히 알아봐요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "visual" },
+      "feedback": {
+        "high": "영상 학습이 효과적이구나! 유튜브 강의나 다큐멘터리를 활용해봐!",
+        "mid": "영상도 가끔 도움이 되는구나!",
+        "low": "글이나 다른 방법이 더 맞을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_010",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "다른 사람에게 설명해주면 더 잘 기억나나요?",
+      "context": "가르치며 배우는 방법이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "social" },
+      "feedback": {
+        "high": "'가르치며 배우기'가 효과적이구나! 친구에게 설명해주는 연습을 해봐!",
+        "mid": "가끔 설명하면 도움이 되는구나!",
+        "low": "혼자 복습하는 게 더 맞을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_011",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "규칙이나 패턴을 찾는 걸 좋아하나요?",
+      "context": "하루가 혈귀의 공격 패턴을 분석하고 있어요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "logical" },
+      "feedback": {
+        "high": "패턴 인식이 강점이네! 수학이나 과학에서 이 능력이 빛날 거야!",
+        "mid": "가끔 패턴을 찾는 게 재미있구나!",
+        "low": "패턴보다 전체 그림을 보는 게 더 맞을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_012",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "움직이면서 외우면 더 잘 외워지나요?",
+      "context": "걸으면서 암기하는 방법이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "kinesthetic" },
+      "feedback": {
+        "high": "움직임이 학습에 도움이 되는구나! 걸으면서 복습하거나 손동작을 활용해봐!",
+        "mid": "가끔 움직이면 도움이 되는구나!",
+        "low": "앉아서 집중하는 게 더 맞을 수 있어!"
+      }
+    },
+    {
+      "id": "strength_013",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "마감 시간이 있으면 더 집중이 되나요?",
+      "context": "시간 제한의 효과에 대한 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "independent" },
+      "feedback": {
+        "high": "마감이 동기부여가 되는구나! 타이머를 활용해 공부해봐!",
+        "mid": "가끔 마감이 도움이 되는구나!",
+        "low": "여유있게 하는 게 더 맞을 수 있어. 자신의 페이스로!"
+      }
+    },
+    {
+      "id": "strength_014",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "예시나 실제 사례를 보면 더 잘 이해되나요?",
+      "context": "구체적인 예시의 효과에 대한 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "visual" },
+      "feedback": {
+        "high": "구체적인 예시가 도움이 되는구나! 실생활과 연결된 설명을 찾아봐!",
+        "mid": "가끔 예시가 도움이 되는구나!",
+        "low": "추상적인 개념도 잘 이해하는구나!"
+      }
+    },
+    {
+      "id": "strength_015",
+      "type": "scale",
+      "difficulty": 1,
+      "question": "어려운 문제를 풀면 성취감을 느끼나요?",
+      "context": "도전의 즐거움에 대한 질문이에요.",
+      "scaleLabels": ["전혀 아니야", "별로", "보통", "그런 편", "정말 그래!"],
+      "scoring": { "positive": true, "weights": [1, 2, 3, 4, 5], "strengthType": "logical" },
+      "feedback": {
+        "high": "도전을 즐기는구나! 어려운 문제에 도전하는 게 성장의 기회야!",
+        "mid": "가끔 성취감을 느끼는구나!",
+        "low": "괜찮아, 작은 성공에서도 기쁨을 찾을 수 있어!"
+      }
+    }
+  ],
+  "analysisGuide": {
+    "strengthProfiles": {
+      "visual": {
+        "description": "시각적 자료(그림, 영상, 색상)로 배우면 효과적",
+        "strategies": [
+          "마인드맵으로 개념 정리하기",
+          "형광펜으로 중요 부분 표시하기",
+          "그림이나 도표로 내용 시각화하기",
+          "유튜브 강의나 다큐멘터리 활용하기",
+          "색깔별로 카테고리 구분하기"
+        ],
+        "tools": ["마인드맵 앱", "형광펜", "화이트보드", "유튜브"]
+      },
+      "auditory": {
+        "description": "청각적 자료(강의, 설명, 토론)로 배우면 효과적",
+        "strategies": [
+          "강의나 오디오북 듣기",
+          "소리내어 읽으며 공부하기",
+          "자기 목소리로 녹음해서 듣기",
+          "음악 없이 조용한 환경 만들기",
+          "배운 내용 누군가에게 말로 설명하기"
+        ],
+        "tools": ["오디오북", "녹음 앱", "팟캐스트", "강의 영상"]
+      },
+      "kinesthetic": {
+        "description": "체험적 활동(실험, 만들기, 움직임)으로 배우면 효과적",
+        "strategies": [
+          "직접 실험하거나 만들어보기",
+          "걸으면서 암기하기",
+          "손동작이나 제스처 활용하기",
+          "역할극이나 시뮬레이션 해보기",
+          "짧은 시간 공부 후 스트레칭하기"
+        ],
+        "tools": ["실험 도구", "만들기 재료", "타이머", "운동화"]
+      },
+      "reading": {
+        "description": "읽고 쓰기(노트, 요약, 글쓰기)로 배우면 효과적",
+        "strategies": [
+          "핵심 내용 노트에 정리하기",
+          "자기 말로 요약문 작성하기",
+          "리스트나 표로 정리하기",
+          "플래시카드 만들어 복습하기",
+          "일기나 학습 일지 작성하기"
+        ],
+        "tools": ["노트", "플래시카드", "필기구", "학습 다이어리"]
+      },
+      "logical": {
+        "description": "논리적 분석(원리, 규칙, 패턴)으로 배우면 효과적",
+        "strategies": [
+          "'왜 그런지' 원리부터 이해하기",
+          "규칙이나 패턴 찾아보기",
+          "단계별로 문제 분석하기",
+          "인과관계 파악하며 공부하기",
+          "유사한 문제 비교 분석하기"
+        ],
+        "tools": ["문제집", "논리 퍼즐", "수학 앱", "분석 도구"]
+      },
+      "social": {
+        "description": "사회적 활동(토론, 그룹 학습, 가르치기)으로 배우면 효과적",
+        "strategies": [
+          "스터디 그룹 만들어 함께 공부하기",
+          "친구에게 설명해주며 배우기",
+          "토론하며 다양한 관점 듣기",
+          "질문하고 답변 나누기",
+          "온라인 학습 커뮤니티 참여하기"
+        ],
+        "tools": ["스터디 그룹", "화상 통화", "학습 커뮤니티", "토론 앱"]
+      },
+      "independent": {
+        "description": "독립적 학습(혼자, 자기 페이스)으로 배우면 효과적",
+        "strategies": [
+          "조용한 학습 공간 확보하기",
+          "자기만의 학습 계획 세우기",
+          "자기 속도로 진행하기",
+          "개인 목표 설정하고 달성하기",
+          "방해 요소 최소화하기"
+        ],
+        "tools": ["개인 학습 공간", "플래너", "집중 앱", "이어폰"]
+      },
+      "creative": {
+        "description": "창의적 활동(상상, 만들기, 새로운 방법)으로 배우면 효과적",
+        "strategies": [
+          "자기만의 방법으로 문제 해결하기",
+          "이야기나 시나리오 만들어보기",
+          "다양한 방법 실험해보기",
+          "프로젝트 기반 학습하기",
+          "상상력 활용한 암기법 만들기"
+        ],
+        "tools": ["스케치북", "프로젝트 도구", "창작 앱", "상상 노트"]
+      }
+    },
+    "combinationTips": {
+      "visual_kinesthetic": "그림 그리면서 직접 만들어보기, 움직이는 영상 따라하기",
+      "visual_reading": "마인드맵 그리며 요약문 작성하기, 색깔별 노트 정리",
+      "visual_logical": "도표로 원리 정리하기, 플로우차트로 논리 시각화",
+      "auditory_social": "친구들과 토론하며 설명하기, 함께 소리내어 읽기",
+      "auditory_reading": "소리내어 읽으며 핵심 메모하기, 녹음 들으며 노트 정리",
+      "kinesthetic_social": "역할극이나 게임으로 함께 배우기, 실험 함께 하기",
+      "kinesthetic_creative": "직접 만들면서 새로운 방법 시도하기",
+      "reading_logical": "개념 정리하며 원리 분석하기, 단계별 요약문 작성",
+      "reading_independent": "혼자 조용히 노트 정리하기, 개인 학습 일지 작성",
+      "logical_independent": "혼자 문제 분석하며 풀이법 연구하기",
+      "creative_independent": "자기만의 독특한 학습법 개발하기",
+      "social_creative": "그룹에서 새로운 아이디어 브레인스토밍하기"
+    },
+    "profileInterpretation": {
+      "singleDominant": "하나의 강점이 뚜렷하게 높으면 해당 방법 집중 활용",
+      "multipleDominant": "여러 강점이 높으면 조합 전략 활용",
+      "balanced": "골고루 높으면 다양한 방법 번갈아 사용",
+      "lowAllScores": "전반적으로 낮으면 하나씩 시도해보며 맞는 방법 탐색"
+    },
+    "demonSlayerConnection": {
+      "visual": "탄지로의 물의 호흡 - 물의 흐름을 시각화하여 기술 사용",
+      "auditory": "젠이츠의 뛰어난 청각 - 소리로 상대를 파악",
+      "kinesthetic": "이노스케의 체험 학습 - 직접 부딪히며 배우기",
+      "reading": "시노부의 연구 노트 - 기록하고 분석하며 배우기",
+      "logical": "토미오카의 냉정한 분석 - 원리를 파악하고 적용",
+      "social": "동료들과의 훈련 - 함께 성장하기",
+      "independent": "산 속 홀로 수련 - 자신만의 방식으로 정진",
+      "creative": "하루의 여우의 호흡 - 자신만의 새로운 기술 개발"
+    }
+  }
+}

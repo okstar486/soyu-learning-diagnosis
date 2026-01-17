@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#9370DB">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="소유 학습 진단 앱 - 귀멸의칼날 테마 학습 진단">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <title>소유 학습 진단 - 나비저택 특별 수련</title>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-icon">🦊</div>
+      <div class="loading-text">나비저택에 도착 중...</div>
+      <div class="loading-bar">
+        <div class="loading-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App Container -->
+  <div id="app" class="app-container hidden">
+    <!-- Header -->
+    <header id="app-header" class="app-header">
+      <div class="header-left">
+        <button id="btn-back" class="btn-icon hidden" aria-label="뒤로가기">
+          <span class="icon">←</span>
+        </button>
+      </div>
+      <div class="header-center">
+        <h1 id="page-title" class="page-title">나비저택 특별 수련</h1>
+      </div>
+      <div class="header-right">
+        <div id="level-badge" class="level-badge">
+          <span class="level-icon">🦊</span>
+          <span id="level-text" class="level-text">1형</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Container -->
+    <main id="page-container" class="page-container">
+      <!-- Pages will be loaded here dynamically -->
+    </main>
+
+    <!-- Character Display -->
+    <div id="character-container" class="character-container hidden">
+      <div class="character-wrapper">
+        <img id="character-image" class="character-image" src="assets/images/haru_main.jpeg" alt="하루">
+        <div id="character-dialogue" class="character-dialogue hidden">
+          <div class="dialogue-bubble">
+            <p id="dialogue-text" class="dialogue-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-container" class="progress-container hidden">
+      <div class="progress-info">
+        <span id="progress-area" class="progress-area">어휘력</span>
+        <span id="progress-count" class="progress-count">0 / 20</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Modal Container -->
+    <div id="modal-container" class="modal-container hidden">
+      <div class="modal-overlay"></div>
+      <div id="modal-content" class="modal-content">
+        <!-- Modal content will be injected here -->
+      </div>
+    </div>
+
+    <!-- Level Up Effect -->
+    <div id="levelup-effect" class="levelup-effect hidden">
+      <div class="levelup-content">
+        <div class="levelup-icon">🦊✨</div>
+        <h2 id="levelup-title" class="levelup-title">레벨 업!</h2>
+        <p id="levelup-name" class="levelup-name">여우의 호흡 2형</p>
+        <p id="levelup-message" class="levelup-message">축하해! 새로운 형을 익혔어!</p>
+        <button id="levelup-close" class="btn btn-accent">계속하기</button>
+      </div>
+      <div class="levelup-particles" id="levelup-particles"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/character.js"></script>
+  <script src="js/level.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/diagnosis.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('SW registered:', registration.scope);
+          })
+          .catch(error => {
+            console.log('SW registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

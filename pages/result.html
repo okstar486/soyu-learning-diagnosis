@@ -1,0 +1,32 @@
+<!-- 결과 페이지 -->
+<div class="result-page">
+  <div id="result-container" class="result-container">
+    <!-- 결과 내용이 JavaScript로 동적 생성됩니다 -->
+    <div class="loading-placeholder">
+      <div class="loading-icon pulsing">🦊</div>
+      <p>결과 분석 중...</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .result-page {
+    min-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+  }
+
+  .result-container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .loading-placeholder {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    color: var(--text-secondary);
+  }
+
+  .loading-icon {
+    font-size: 48px;
+    margin-bottom: var(--spacing-md);
+  }
+</style>

@@ -1,0 +1,167 @@
+<!-- 홈 페이지 -->
+<div class="home-page">
+  <!-- 헤더 영역 -->
+  <div class="home-header">
+    <div class="logo-container">
+      <span class="logo-icon">🦊</span>
+      <h1 class="logo-text">나비저택 특별 수련</h1>
+    </div>
+    <p class="home-subtitle">하루와 함께하는 학습 진단</p>
+  </div>
+
+  <!-- 메인 버튼 영역 -->
+  <div class="home-actions">
+    <button id="btn-start" class="btn btn-primary btn-lg btn-block">
+      <span class="btn-icon">⚔️</span>
+      수련 시작하기
+    </button>
+
+    <button id="btn-continue" class="btn btn-secondary btn-lg btn-block hidden">
+      <span class="btn-icon">▶️</span>
+      이어서 하기
+    </button>
+
+    <p id="progress-text" class="progress-info hidden"></p>
+  </div>
+
+  <!-- 정보 카드 -->
+  <div class="info-cards">
+    <div class="info-card">
+      <div class="info-icon">📚</div>
+      <div class="info-content">
+        <h3>6개 영역 진단</h3>
+        <p>어휘력, 읽기 이해, 문법 등 학습 역량을 다각도로 파악해요</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">🎮</div>
+      <div class="info-content">
+        <h3>레벨업 시스템</h3>
+        <p>여우의 호흡 1형부터 완성까지! 문제를 풀며 성장해요</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">🦊</div>
+      <div class="info-content">
+        <h3>하루와 함께</h3>
+        <p>하루가 응원하고 격려해줄 거예요</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 부모 대시보드 버튼 -->
+  <div class="home-footer">
+    <button id="btn-dashboard" class="btn-link">
+      🔒 부모 대시보드
+    </button>
+  </div>
+</div>
+
+<style>
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+  }
+
+  .home-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .logo-icon {
+    font-size: 60px;
+    animation: bounce 2s ease infinite;
+  }
+
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: var(--font-size-2xl);
+    color: var(--primary);
+  }
+
+  .home-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+  }
+
+  .home-actions {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .home-actions .btn {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn-icon {
+    font-size: var(--font-size-xl);
+  }
+
+  .progress-info {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-sm);
+  }
+
+  .info-cards {
+    flex: 1;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--border-color);
+  }
+
+  .info-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+  }
+
+  .info-content h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .info-content p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+
+  .home-footer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .btn-link {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .btn-link:hover {
+    color: var(--primary);
+  }
+</style>
